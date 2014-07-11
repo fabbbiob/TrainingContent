@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Microsoft Graph Training Module - Optimize Data Usage when Using Microsoft Graph with Query Parameters
 
 Learn how to control the amount of data returned by Microsoft Graph to optimize queries using query parameters.
@@ -51,3 +52,9 @@ This module has been recorded and is available in the Office Development YouTube
 **THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 <img src="https://telemetry.sharepointpnp.com/msgraph-training-optimize-data-usage" />
+=======
+TrainingContent
+===============
+
+Training Content used for Microsoft Virtual Academy
+>>>>>>> Initial commit
