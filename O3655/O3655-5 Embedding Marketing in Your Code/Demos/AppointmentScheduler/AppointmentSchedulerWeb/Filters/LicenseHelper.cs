@@ -32,9 +32,13 @@ namespace AppointmentSchedulerWeb.Filters
 
 		public static string GetReviewURL(VerifyEntitlementTokenResponse verifiedLicense)
 		{
+<<<<<<< HEAD
 			String reviewURL = "https://store.office.com/writereview.aspx?assetid={0}&AuthType=1";
 							 
 			return String.Format(reviewURL, verifiedLicense.AssetId);;
+=======
+			return String.Format("http://store.office.com/writereview.aspx?p4=WA&productID={0}", appProductId);
+>>>>>>> 1st Update Wave for Jim Epes
 		}
 
         public static VerifyEntitlementTokenResponse GetAndVerifyLicense(Guid productId, ClientContext ctx)
