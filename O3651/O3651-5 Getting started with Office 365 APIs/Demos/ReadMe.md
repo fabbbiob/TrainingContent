@@ -1,8 +1,12 @@
 # Demos
 
 ## Azure Active Directory Portal
+<<<<<<< HEAD
 1. [Azure ManagementPortal](https://manage.windowsazure.com)
 
+=======
+1. [Azure Portal](htts://manage.windowsazure.com)
+>>>>>>> Update to readme and lab descriptions
 ## Authentication process
 1. [How to use Discovery Service](http://code.msdn.microsoft.com/Office-365-APIs-How-to-use-609102ea)
 
