@@ -17,15 +17,19 @@ In this exercise you create a new provider-hosted add-in and examine the OAuth A
     1. Click **SharePoint Add-in**.
     1. Name the new project **ProviderHostedOAuth** and click **OK**.
 
-      ![](Images/01.png)
+      ![Screenshot of the previous step](Images/01.png)
 
   1. In the **New App for SharePoint** wizard:
     1. Enter the address of a SharePoint site to use for testing the add-in (**NOTE:** The targeted site must be based on a Developer Site template)
     1. Select **Provider-Hosted** as the hosting model.
     1. Click **Next**.
 
+<<<<<<< HEAD
       ![](Images/02.png)
 	1. Enter your Office 365 administrator credentials, and Click **Sign in**.
+=======
+      ![Screenshot of the previous step](Images/02.png)
+>>>>>>> Add alt text to screenshots in training content
 
       ![](Images/02-connect.png)
 	1. Modify the target version if the system has detected a wrong result, and Click **Next**.
@@ -34,16 +38,16 @@ In this exercise you create a new provider-hosted add-in and examine the OAuth A
     1. Select **ASP.NET MVC Web Application**.
     1. Click **Next**.
 
-      ![](Images/03.png)
+      ![Screenshot of the previous step](Images/03.png)
 
     1. Select the option labeled **Use Windows Azure Access Control Service (for SharePoint cloud add-ins)**.
     1. Click **Finish**.
 
-      ![](Images/04.png)
+      ![Screenshot of the previous step](Images/04.png)
 
     1. After the new project is created, set breakpoints in **HomeController.cs** as shown.
 
-      ![](Images/05.png)
+      ![Screenshot of the previous step](Images/05.png)
 
 1. Start **Fiddler** to capture web traffic from your add-in.
   1. In Fiddler click **Tools/Fiddler Options**.
@@ -59,11 +63,11 @@ In this exercise you create a new provider-hosted add-in and examine the OAuth A
   1. When prompted, sign into Office 365.
   1. When prompted, click **Trust It**.
 
-    ![](Images/07.png)
+    ![Screenshot of the previous step](Images/07.png)
 
   1. When the first breakpoint is hit, look for the session in Fiddler near the bottom of the list.
 
-    ![](Images/08.png)
+    ![Screenshot of the previous step](Images/08.png)
 
   1. Right click the session and select **Inspect in New Window**.
   1. Click the **WebForms** tab.
@@ -72,18 +76,18 @@ In this exercise you create a new provider-hosted add-in and examine the OAuth A
 
   1. Notice that the context token is included in the body as **SPAppToken**.
  
-    ![](Images/09.png)
+    ![Screenshot of the previous step](Images/09.png)
  
   1. Close the window.
   1. Return to Visual Studio, and press **F5** to continue debugging.
   1. When the second breakpoint is hit, look for the session in Fiddler near the bottom of the list.
 
-    ![](Images/10.png)
+    ![Screenshot of the previous step](Images/10.png)
 
   1. Right click the session and select **Inspect in New Window**.
   1. Click the **Headers** tab and examine the access token in the **Cookies/Login** section.
 
-    ![](Images/11.png)
+    ![Screenshot of the previous step](Images/11.png)
 
   1. Return to Visual Studio, and press **F5** to continue debugging.
   1. With the add-in still running, open a new browser window to **<SPSite>/_layouts/15/AppPrincipals.aspx**.
@@ -103,7 +107,7 @@ In this exercise you create a new web application and examine the OAuth Authoriz
     1. Click **ASP.NET Web Application**.
     1. Name the new project **OfficeOAuth** and click **OK**.
 
-      ![](Images/12.png)
+      ![Screenshot of the previous step](Images/12.png)
 
   1. In the **New ASP.NET Project** dialog, select **Web API**.
   1. Check **Host in the Cloud**.
@@ -113,11 +117,11 @@ In this exercise you create a new web application and examine the OAuth Authoriz
     1. Click **OK**.
   1. Click **OK**.
 
-    ![](Images/13.png)
+    ![Screenshot of the previous step](Images/13.png)
 
   1. In Create App Service dialog, **sign in** an account with **Microsoft Azure** subscription, make appropriate settings for **Web App Name**, **Subscription**, **Resource Group**, **App Service Plan**, click **Create**.
 
-    ![](Images/14.png)
+    ![Screenshot of the previous step](Images/14.png)
 
 1. Add an Office 365 connection
   1. Right click the **OfficeOAuth** project and select **Add/Connected Service**.
@@ -131,7 +135,7 @@ In this exercise you create a new web application and examine the OAuth Authoriz
   1. In **Calendar**, **Contacts**, **Mail**, **My Files**, **Sites** section, select nothing.
   1. In **Users and Groups**, only select **Sign you in and read your profile**, click **Finish**..
 
-    ![](Images/15.png)
+    ![Screenshot of the previous step](Images/15.png)
 
 1. Examine the Microsoft Azure configuration.
   1. Log into the [Azure Management Portal](https://manage.windowsazure.com)
@@ -336,16 +340,29 @@ In this exercise you create a new web application and examine the OAuth Authoriz
   1. Verify that the application displays your calendar information.
   1. In **Fiddler**, locate the session entry containing the query string parameter **code**. This is the Authorization Code returned from Azure Access Control Services.
 
-    ![](Images/16.png)
+    ![Screenshot of the previous step](Images/16.png)
 
   1. Right click the session and select **Inspect in New Window**.
   1. In the session window, click the **Web Forms** tab.
   1. Examine the authorization code.
 
-    ![](Images/17.png)
+    ![Screenshot of the previous step](Images/17.png)
 
   1. Close the window.
   1. Stop debugging.
+<<<<<<< HEAD
+=======
+1. Examine the Microsoft Azure configuration.
+  1. Log into the [Azure Management Portal](https://manage.windowsazure.com)
+  1. Click **Active Directory**.
+  1. Select your Azure Active Directory instance.
+  1. Click on the add-in entitled **OfficeOAuth.Office365App**. This entry was made for you by the Office 365 tools in Visual Studio.
+  1. Click **Configure**.
+  1. Scroll to the section entitled **Permissions to Other Applications**.
+  1. Examine the **Office 365 Exchange Online** permissions. These are the permissions you granted in Visual Studio.
+
+    ![Screenshot of the previous step](Images/18.png)
+>>>>>>> Add alt text to screenshots in training content
 
 In this exercise you created a new web application and examined the OAuth Authorization Code Flow.
 
@@ -364,7 +381,7 @@ The first step is to create & configure an application in your Azure AD director
   1. Copy the **SSL URL** property to the clipboard for use in the next step.
   1. Save your changes.
 
-    ![](Images/SslEnabled.png)
+    ![Screenshot of the previous step](Images/SslEnabled.png)
 
     > It is important to do this now because in the next step when you create the application in Azure AD, you want the reply URL to use HTTPS. If you did not do this now, you would have to manually make the changes the Visual Studio wizard is going to do for you in creating the app.
     
@@ -384,12 +401,28 @@ The first step is to create & configure an application in your Azure AD director
     ````
  
 1. In the **Solution Explorer**, right click the **ClientCredsAddin** project and select **Add/Connected Service**.
+<<<<<<< HEAD
   1. In the **Add Connected Service** dialog, select **Office 365 APIs**. Click **Configure**.
   1. In **Select Domain** section, input an Office 365 domain, click **Next**.
   1. If prompted, **sign in** an account with appropriate privileges to access the Office 365 domain.
   1. In **Configure Application** section, select **Create a new Azure AD application to access Office 365 API services**, uncheck **Configure Single Sign-On using Azure AD**, click **Next**.
   1. In **Calendar**, **Contacts**, **Mail**, **My Files**, **Sites** section, select nothing.
   1. In **Users and Groups**, only select **Sign you in and read your profile**, click **Finish**.
+=======
+  1. In the **Services Manager** dialog:
+    1. Click **Register your app**.
+    1. When prompted, login with your **Organizational Account**.
+    1. Click **App Properties**.
+       1. Verify the option **Single Organization** is selected.
+       1. Click **Apply**.
+    ![Screenshot of the previous step](Images/29.png)
+    1. Click **Users and Groups**.
+       1. Click **Permissions...**.
+       2. Choose **Sign in and read user profile**.
+       3. Click **Apply**.
+    ![Screenshot of the previous step](Images/30.png)
+    1. Click **OK**.
+>>>>>>> Add alt text to screenshots in training content
 
 1. Now you need to create a public-private key-pair certificate. Do this by creating a self-signed certificate:
   1. Launch a Visual Studio Command Prompt: **Start / Visual Studio 2015 / Developer Command Prompt for VS2015**.
@@ -398,23 +431,23 @@ The first step is to create & configure an application in your Azure AD director
     ````command
     makecert -r -pe -n "CN=Contoso SuperApp Cert" -b 01/01/2016 -e 12/31/2016 -ss my -len 2048
     ````
-    ![](Images/31.png)
+    ![Screenshot of the previous step](Images/31.png)
 1. Next, extract the public & private keys from the machine's certificate store:
   1. Launch an MMC instance (**Start / Run / MMC **).
   1. In the menu, select **File / Add or Remove Snap-in...**.
   1. Select **Certificates**, click **Add** and **OK**. *If prompted, pick the current user or My user account option.*
 
-    ![](Images/19.png)
+    ![Screenshot of the previous step](Images/19.png)
 
   1. Expand the tree to **Console Root / Certificates - Current User / Personal / Certificates**:
   1. Find the certificate you created by name, right-click and select **All Tasks / Export...**
 
-    ![](Images/20.png)
+    ![Screenshot of the previous step](Images/20.png)
 
   1. Click **Next** on the wolcome page if it presents. 
   1. Export the public key by selecting **No, do not export the private key** and clicking **Next**.
 
-    ![](Images/21.png)
+    ![Screenshot of the previous step](Images/21.png)
 
   1. Select **DER encoded binary X.509 (.CER)** and click **Next**.
   1. Save the file to you system as **ClientCredsAddin.cer**. This is the public key part of the certificate.
@@ -422,7 +455,7 @@ The first step is to create & configure an application in your Azure AD director
   1. This time, select **Yes, export the private key** and click **Next**.
   1. Select the format **Personal Information Exchange - PKCS #12 (.PFX)** and check the **Include all certificates in the certification path if possible**, finally clicking **Next**.
 
-    ![](Images/22.png)
+    ![Screenshot of the previous step](Images/22.png)
 
   1. On the **Security** page, check the **Password** option and enter a password you will remember, click **Next**.
   1. Finally click **Finish** and save the certificate to the file system as **CertCredsAddin.pfx**.
@@ -449,7 +482,7 @@ Now that you have the certificate public-private key pair, you need to add the p
     $keyid
     $base64Value
     ````
-    ![](Images/32.png)
+    ![Screenshot of the previous step](Images/32.png)
 1. Now, update the application's registration in the Azure Management Portal:
   1. Open a browser and navigate to the Azure Management Portal at https://manage.windowsazure.com.
   1. In the left-hand navigation, scroll down to and click on **Active Directory**.
@@ -460,7 +493,7 @@ Now that you have the certificate public-private key pair, you need to add the p
   > There is no user interface to add a certificate so you will add it manually to the manifest.
   
   1. At the bottom of the page, click the **Manage Manifest** button and select **Download Manifest** to download a JSON manifest of the application. 
-    ![](Images/33.png)
+    ![Screenshot of the previous step](Images/33.png)
   1. Open the JSON file in a text editor & locate the section `"keyCredentials": [],`.
   1. Add a JSON object to this empty array that matches the following, but take care to update values **$base64Value**, **$base64Thumbprint** & **$keyId** from the values you obtained in PowerShell previously:
 
@@ -475,29 +508,47 @@ Now that you have the certificate public-private key pair, you need to add the p
       }
     ],
     ````
+<<<<<<< HEAD
     > Copying directly from PowerShell inserts line breaks in long strings, you may want to copy the **$base64Thumbprint** value to Notepad in order to correctly format the long strings.
     
     ![](Images/34.png)
+=======
+    ![Screenshot of the previous step](Images/34.png)
+>>>>>>> Add alt text to screenshots in training content
   1. Save your changes.
   1. Go back to the Azure Management Portal where your app is still selected.
   1. Click the **Manage Manifest** button and select **Upload Manifest**.
-    ![](Images/35.png)
+    ![Screenshot of the previous step](Images/35.png)
   1. Upload the JSON file you just modified.
 
   1. Now, modify the permissions for the application to grant the application app-only permissions.
     1. Scroll down to the **permissions to other applications** section. 
+<<<<<<< HEAD
       1. Click **Add application**. In the popup window, add **Microsoft Graph**
       ![](Images/40.png)
       1. In the **Application Permissions** dropdown on the same line for **Microsoft Graph**, select the following permission:
+=======
+      1. Click **Add application**. In the popup window, add **Office 365 Exchange Online**
+      ![Screenshot of the previous step](Images/40.png)
+      1. In the **Application Permissions** dropdown on the same line for **Office 365 Exchange Online**, select the following permission:
+>>>>>>> Add alt text to screenshots in training content
       
         + Read mail in all mailboxes
-     ![](Images/36.png)
+     ![Screenshot of the previous step](Images/36.png)
       1. In the line for **Windows Azure Active Directory**, select the **Application Permissions** dropdown and add the following permission:
 
         + Read directory data
-     ![](Images/37.png)
+     ![Screenshot of the previous step](Images/37.png)
   1. Click the **Save** button at the bottom of the page.
 
+<<<<<<< HEAD
+=======
+1. Before leaving Azure AD, collect two values that will be needed in the next step:
+  1. On the page for the Azure AD application, locate the **Client ID** GUID and copy it to a text file.
+  1. At the bottom of the page, click the **View Endpoints** button. All of the endpoints have a GUID near the start of them. Copy that GUID as that is the **tenant ID** or your Azure AD directory.
+    ![Screenshot of the previous step](Images/38.png)
+
+>>>>>>> Add alt text to screenshots in training content
 ### Setup the ASP.NET MVC Web Application for App-Only Authentication
 Now that the application is configured with the public certificate & necessary permissions in Azure AD, you can now update the ASP.NET MVC application for app-only permissions and leverage the client credentials OAuth flow.
 
@@ -505,11 +556,16 @@ Now that the application is configured with the public certificate & necessary p
 1. Open the `web.config` and set the following values in the `<appSettings>` section:
   - **ida:CertPfxFilePath**: Enter `~/Content/CertCredsAddin.pfx` and copy the `CertCredsAddin.pfx` file to the **Content** folder in the project. *In a real application you will want to put this certificate in a safe place on your production server and not the root of the web application, but for this lab this is sufficient.*
   - **ida:CertPfxFilePassword**: Enter the password you used when exporting the private `CertCredsAddin.pfx` file.
+<<<<<<< HEAD
     ![](Images/39.png)
 1. Assembly references are not added to the starter projects, rather they are added to the actual client projects. Therefore you need to add the following NuGet packages manually.
+=======
+    ![Screenshot of the previous step](Images/39.png)
+1. Assembly references are not added to the starter projects in Universal Apps, rather they are added to the actual client projects. Therefore you need to add the following NuGet packages manually.
+>>>>>>> Add alt text to screenshots in training content
 	1. Open the Package Manager Console: **View/Other Windows/Package Manager Console**.
 	2. Click **Restore** to restore all missing NuGet packages.
-	![](Images/28.png)
+	![Screenshot of the previous step](Images/28.png)
 	
 1. Create a MVC controller that will be used for all authentication routing for the web application:
   1. Right-click the **Controllers** folder and select **Add/Controller**.
@@ -969,21 +1025,21 @@ The ASP.NET MVC web application now contains all the *worker* code to authentica
   1. When the browser launches, click the **Mail** menu item in the top navigation.
   1. Notice no mailboxes are shown because your application is not authenticated. Click the button **Go Admin Consent** to trigger the login & admin consent prompt for the global tenant administrator:
 
-    ![](Images/23.png)
+    ![Screenshot of the previous step](Images/23.png)
 
   1. Login to Azure AD using the credentials for the global tenant administrator for your Azure AD directory.
   1. Notice that after you successfully login, you are presented with the admin consent screen. This page is telling you the permissions it needs and how broad sweeping the permission request is as indicated by the message *If you agree, this app will have access to the specified resources for all users in your organization. No one else will be prompted.*
 
-    ![](Images/24.png)
+    ![Screenshot of the previous step](Images/24.png)
 
   1. Click **Accept** to grant the app permissions and to go back to your ASP.NET MVC web application.
   1. The app will take you back to the **Mail** controller and display the tenant and logged in user. Notice that it also now has a list of all the users in your directory within the drop down:
 
-    ![](Images/25.png)
+    ![Screenshot of the previous step](Images/25.png)
 
   1. Select one user and click the **View User's Emails** button. The page will reload and show a list of the subject lines of those emails:
 
-    ![](Images/26.png)
+    ![Screenshot of the previous step](Images/26.png)
 
     Notice in the figure above, the currently logged in user's emails are being shown. 
 
@@ -991,7 +1047,7 @@ The ASP.NET MVC web application now contains all the *worker* code to authentica
 
   1. Change to another user and click the **View User's Emails** button. Notice how you are now reading someone else's emails!
 
-    ![](Images/27.png)
+    ![Screenshot of the previous step](Images/27.png)
 
 In this exercise you created a new web application and examined the OAuth Client Credentials flow.
 

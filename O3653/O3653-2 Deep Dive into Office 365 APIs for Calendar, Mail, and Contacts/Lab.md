@@ -96,17 +96,17 @@ In this exercise, you will create the ASP.NET MVC5 application and register it w
 1. In Visual Studio select **File/New/Project**.
 1. In the **New Project** dialog, select **Templates/Visual C#/Web** and click **ASP.NET Web Application**. Name the new project **Office365Mail** and then click **OK**.  
     
-    ![](Images/01.png)
+    ![Screenshot of the previous step](Images/01.png)
     > NOTE: You need sign up for your Azure subscription.
     
 1. In the **New ASP.NET Project** dialog, click **MVC** and then click **Change Authentication**.
 1. Select **Work And School Accounts**, check **Read directory data** and click **OK**.
 
-	![](Images/02.png)
+	![Screenshot of the previous step](Images/02.png)
 
 1. Once the **New ASP.NET Project** dialog appears like the following screenshot, click **OK**. 
 
-	![](Images/03.png)
+	![Screenshot of the previous step](Images/03.png)
     
 <<<<<<< HEAD
 1. Configure the project to always go to the homepage of the web application when debugging:
@@ -656,8 +656,13 @@ In this exercise you will take the ASP.NET MVC web application you created in th
   1. Login using your **Organizational Account**.
   1. Upon a successful login, since this will be the first time you have logged into this app, Azure AD will present you with the common consent dialog that looks similar to the following image:
 
+<<<<<<< HEAD
     ![](Images/ConsentDialog.png)
   1. Click **Accept** to approve the app's permission request on your data in Office 365.
+=======
+    ![Screenshot of the previous step](Images/ConsentDialog.png)
+  1. Click **OK** to approve the app's permission request on your data in Office 365.
+>>>>>>> Add alt text to screenshots in training content
   1. You will then be redirected back to your web application. However notice in the upper right corner, it now shows your email address & the **Sign Out** link.
 
 Congratulations... at this point your app is configured with Azure AD and leverages OpenID Connect and OWIN to facilitate the authentication process!
@@ -669,7 +674,7 @@ Congratulations... at this point your app is configured with Azure AD and levera
 3. Select the directory you share with your Office 365 subscription.
 4. Search for this app with the **ida:ClientId** that was created in exercise 1.
 
-    ![](Images/04.png)
+    ![Screenshot of the previous step](Images/04.png)
 5. Select the application. 
 6. Open the **Configure** tab.
 7. Scroll down to the **permissions to other applications** section. 
@@ -1056,8 +1061,12 @@ In this exercise, you will code the **Home** controller of the MVC application t
 =======
 1. In the **Solution Explorer**, create a new folder named **Util**.
 
+<<<<<<< HEAD
     ![](Images/06.png)
 >>>>>>> O3653-2: Updated VS Solution to 2015. Converted to Microsoft Graph API REST calls.  Created seperate projects correlating to each completed exercise.  Updated demo README.  Updated slide deck verbiage and added new section.  This commit addresses issues #152 and #117.
+=======
+    ![Screenshot of the previous step](Images/06.png)
+>>>>>>> Add alt text to screenshots in training content
 
 2. Right-click the **Util** folder and select **Add/Class**, in the **Add New Item** dialog, name the new class **SettingsHelper** and click **Add** to create the new source file for the class. 
 3. At the top of the **SettingsHelper.cs** file, remove all the using statements and add the following using statements.
@@ -1113,6 +1122,10 @@ In this exercise, you will code the **Home** controller of the MVC application t
     }
     ```
 
+<<<<<<< HEAD
+=======
+    ![Screenshot of the previous step](Images/05.png)
+>>>>>>> Add alt text to screenshots in training content
 5. In the **Solution Explorer**, locate the **Models** folder in the **Office365Mail** project.
 6. Right-click the **Models** folder and select **Add/Class**.
 7. In the **Add New Item** dialog, name the new class **MyMessage** and click **Add** to create the new source file for the class.  
@@ -1584,7 +1597,7 @@ In this exercise, you will code the **MailController** of the MVC application to
 
 3. Add **[Authorize]** on the top **MailController**.
 
-    ![](Images/07.png)
+    ![Screenshot of the previous step](Images/07.png)
 
 4. Within the `MailController` class, add the following field to get a reference to the repository you previously created:
 
@@ -1618,7 +1631,7 @@ In this exercise, you will code the **MailController** of the MVC application to
          > Leave all other fields blank & unchecked.
        3. Click **Add**.<br/>
 
-          ![](Images/08.png)
+          ![Screenshot of the previous step](Images/08.png)
 
        4. Within the **Views/Mail/Index.cshtml** file, delete all the code in the file and replace it with the following code:
             
@@ -1695,7 +1708,7 @@ In this exercise, you will code the **MailController** of the MVC application to
 	      ```html
 	      <li>@Html.ActionLink("Messages", "Index", "Mail")</li>
 	      ```
-	      ![](Images/09.png)
+	      ![Screenshot of the previous step](Images/09.png)
 
     3. Test the new view.
        1. In **Visual Studio**, hit **F5** to begin debugging.
@@ -1704,7 +1717,7 @@ In this exercise, you will code the **MailController** of the MVC application to
 
        2. When prompted, log in with your **Organizational Account**.
        3. Once the application has initialized and displays the home page, click the **Messages** menu option and verify that your application displays Mail from your Office 365 account.  
-         ![](Images/10.png)
+         ![Screenshot of the previous step](Images/10.png)
        4. Close the browser window, terminate the debugging session, and return to Visual Studio.
 
 6. Add a route handler to view a message:
@@ -1772,7 +1785,7 @@ In this exercise, you will code the **MailController** of the MVC application to
 
      2. When prompted, log in with your **Organizational Account**.
      3. On the **Messages** list, click the **Details** menu option.  
-        ![](Images/11.png)
+        ![Screenshot of the previous step](Images/11.png)
      4. Close the browser window, terminate the debugging session, and return to Visual Studio.
 
 7. Add a route handler delete a message:
@@ -1902,7 +1915,7 @@ In this exercise, you will code the **MailController** of the MVC application to
 
      2. When prompted, log in with your **Organizational Account**.
      3. In the **Messages** list, create a new message by clicking the **Create New Message** menu option.
-        ![](Images/12.png)
+        ![Screenshot of the previous step](Images/12.png)
      4. Fill the form out, and click the **Create** button to send the message.
         
 11. Close the browser window, terminate the debugging session, and return to Visual Studio.

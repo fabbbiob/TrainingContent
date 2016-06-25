@@ -9,6 +9,7 @@ In this lab, you will investigate Android development with the Office 365 Calend
 ## Create Android project ##
 1. Open **Android Studio**.
 2. Click **Start a new Android Studio project**.<br/>
+<<<<<<< HEAD
 	![](Images/01.png)
 3. Type your **Application name** and **Company Domain** and specify the **Project location**, then click **Next**.  Use the same values in the screenshot below.<br/>
 	![](Images/02.png)
@@ -23,6 +24,22 @@ In this lab, you will investigate Android development with the Office 365 Calend
 8. Open the **Project** tab and click **build.gradle (Module: app)**<br/>
 	![](Images/07.png)
 9. Add the code below in **dependencies** section.
+=======
+	![Screenshot of the previous step](Images/01.png)
+3. Type your **Application name** and **Company Domain** and specify the **Project location**, then click **Next**.<br/>
+	![Screenshot of the previous step](Images/02.png)
+4. Select **Minimum SDK API 23** and leave the other settings as default, then click **Next**.<br/>
+	![Screenshot of the previous step](Images/03.png)
+5. Select **Blank Activity**, then click **Next**.<br/>
+	![Screenshot of the previous step](Images/04.png)
+6. Make sure all settings the same as below, then click **Finish**.<br/>
+	![Screenshot of the previous step](Images/05.png)
+7. The **Android Studio** window will be displayed.<br/>
+	![Screenshot of the previous step](Images/06.png)
+8. Open **Project** tab and click **build.gradle (Module: app)**<br/>
+	![Screenshot of the previous step](Images/07.png)
+9. Add the below code in **dependencies** note.
+>>>>>>> Add alt text to screenshots in training content
 
 	````java
 	// base OData library:
@@ -42,32 +59,32 @@ In this lab, you will investigate Android development with the Office 365 Calend
     compile 'com.google.code.gson:gson:2.3.1'
 	````
 
-	![](Images/08.png)
+	![Screenshot of the previous step](Images/08.png)
 10. Save the file and click **Sync Project with Gradle Files** in the top tool bar.<br/>
-	![](Images/09.png)
+	![Screenshot of the previous step](Images/09.png)
 
 ## Integrate Office 365 services ##
 1. Sign in to the [Azure Management Portal](https://manage.windowsazure.com/) with your Office 365 credentials.
 2. Click **ACTIVE DIRECTORY** on the left menu, go to the **DIRECTORY** tab, and then click your directory.<br/>
-	![](Images/10.png)
+	![Screenshot of the previous step](Images/10.png)
 3. Go to the **APPLICATIONS** tab on the new page.
 4. Click **ADD** button on the bottom menu.<br/>
-	![](Images/11.png)
+	![Screenshot of the previous step](Images/11.png)
 5. On the **What do you want to do** page, click **Add an application my organization is developing**.<br/>
-	![](Images/12.png)
+	![Screenshot of the previous step](Images/12.png)
 6. On the **Tell us about your application** page, specify your application **NAME** (AndroidOffice365Calendar) and select the option **NATIVE CLIENT APPLICATION** under **Type**, and then click the arrow to go to the next step.<br/>
-	![](Images/13.png)
+	![Screenshot of the previous step](Images/13.png)
 8. On the Application information page, specify a **Redirect URI**. For this example, you can specify **http://AndroidOffice365Calendar** and then click the **Checkmark** icon.
 9. Once the application has been successfully added, the Quick Start page for the application is displayed.
 10. Click the **CONFIGURE** tab.<br/>
-	![](Images/14.png)
+	![Screenshot of the previous step](Images/14.png)
 11. Click the **Add application** button.<br/>
-	![](Images/15.png)
+	![Screenshot of the previous step](Images/15.png)
 12. Click the service **Microsoft Graph** (or click the plus symbol to add the service) to add the service to the list on the right, then click the **Checkmark** icon to save your selections.<br/>
-	![](Images/16.png)
+	![Screenshot of the previous step](Images/16.png)
 14. Under **permissions to other applications** section, click the **Delegated Permissions** cell in the **Microsoft Graph** row, and check the **Have full access to user calendars** and **Sign in and read user profile** permissions.
 15. Click the **SAVE** button on the bottom menu.<br/>
-	![](Images/17.png)
+	![Screenshot of the previous step](Images/17.png)
 
 ## Code your app ##
 1. Go back to the **Android Studio**.
@@ -78,13 +95,20 @@ In this lab, you will investigate Android development with the Office 365 Calend
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	````
 	
-	![](Images/18.png)
+	![Screenshot of the previous step](Images/18.png)
 
 3. Right click **com.microsoft.androidoffice365calendar** and select New, then click **Java Class**.<br/>
+<<<<<<< HEAD
 	![](Images/19.png)
 4. In the Name textbox enter **Constants** and select **Interface**, then click the **OK** button.<br/>
 	![](Images/20.png)
 5. Replace the source code in the **Constants.java** class with the code below and modify the values of **AAD_CLIENT_ID** and **AAD_REDIRECT_URL** to the actual ones you ceated in the previous steps.
+=======
+	![Screenshot of the previous step](Images/19.png)
+4. Fill in **Constants** and select **Interface**, then click **OK** button.<br/>
+	![Screenshot of the previous step](Images/20.png)
+5. The source code of the file **Constants.java** will be the following, modify the values of **AAD_CLIENT_ID** and **AAD_REDIRECT_URL** to the actual ones.
+>>>>>>> Add alt text to screenshots in training content
 
     ````java
 	package com.microsoft.androidoffice365calendar;
@@ -99,10 +123,15 @@ In this lab, you will investigate Android development with the Office 365 Calend
 
 	**NOTE: You can find the Client ID and Redirect URL in Microsoft Azure**
 
-	![](Images/21.png)
+	![Screenshot of the previous step](Images/21.png)
 6. Add new class file **AuthenticationController.java**.<br/>
+<<<<<<< HEAD
 	![](Images/22.png)
 7. Replace the source code in the **AuthenticationController.java** class with the code below.
+=======
+	![Screenshot of the previous step](Images/22.png)
+7. The source code of the file **AuthenticationController.java** will be the following.
+>>>>>>> Add alt text to screenshots in training content
 
 	````java
 	package com.microsoft.androidoffice365calendar;
@@ -198,8 +227,13 @@ In this lab, you will investigate Android development with the Office 365 Calend
 	````
 
 8. Create new class file **GraphController.java**.<br/>
+<<<<<<< HEAD
 	![](Images/23.png)
 9. Replace the source code in the **GraphController.java** class with the code below.
+=======
+	![Screenshot of the previous step](Images/23.png)
+9. The source code of the file **GraphController.java** will be the following.
+>>>>>>> Add alt text to screenshots in training content
 
 	````java
 	package com.microsoft.androidoffice365calendar;
@@ -326,10 +360,16 @@ In this lab, you will investigate Android development with the Office 365 Calend
 	}
 	````
 
+<<<<<<< HEAD
 12. Open the file **content_main.xml**.<br/>
 
 	![](Images/24.png)
 11. Replace the contents of the **content_main.xml** file with the code below.
+=======
+10. Open the file **activity_main.xml**.<br/>
+	![Screenshot of the previous step](Images/24.png)
+11. Copy the code below to the file **activity_main.xml**:
+>>>>>>> Add alt text to screenshots in training content
 
 	````xml
 	<?xml version="1.0" encoding="utf-8"?>
@@ -405,8 +445,13 @@ In this lab, you will investigate Android development with the Office 365 Calend
 	````
 
 12. Open the file **MainActivity.java**.<br/>
+<<<<<<< HEAD
 	![](Images/25.png)
 13. Replace the contents of the **MainActivity.java** file with the code below.
+=======
+	![Screenshot of the previous step](Images/25.png)
+13. Copy the code below to the file **MainActivity.java**.
+>>>>>>> Add alt text to screenshots in training content
 
 	````java
 	package com.microsoft.androidoffice365calendar;
@@ -548,13 +593,19 @@ In this lab, you will investigate Android development with the Office 365 Calend
 	}
 	````
 
+<<<<<<< HEAD
 14. Click the **green arrow** button to run your app.<br/>
 
 	![](Images/26.png)
+=======
+14. Run your app.<br/>
+	![Screenshot of the previous step](Images/26.png)
+>>>>>>> Add alt text to screenshots in training content
 15. Select **API 23** emulator and click **OK**.
 
 	**NOTE: If there is no such emulator please create a new one with API level 23.**
 
+<<<<<<< HEAD
 	![](Images/27.png)
 16. The emulator will appear.<br/>
 
@@ -568,4 +619,15 @@ In this lab, you will investigate Android development with the Office 365 Calend
 	![](Images/30.png)
 20. The events are displayed.
 	![](Images/31.png)
+=======
+	![Screenshot of the previous step](Images/27.png)
+16. The emulator will be shown.<br/>
+	![Screenshot of the previous step](Images/28.png)
+17. Click **Sign In**.
+18. Fill in your user name and password, then click **Sign in**.<br/>
+	![Screenshot of the previous step](Images/29.png)
+19. Click the **Load Events** button.<br/>
+	![Screenshot of the previous step](Images/30.png)
+20. The events will be shown.
+>>>>>>> Add alt text to screenshots in training content
 
