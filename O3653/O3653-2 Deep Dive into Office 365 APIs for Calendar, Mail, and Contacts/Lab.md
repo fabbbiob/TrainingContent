@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Microsoft Graph for Mail
 In this lab, you will use Microsoft Graph to program against an Office 365 mailbox as part of an ASP.NET MVC5 application.
 
@@ -1930,3 +1931,6 @@ Congratulations! You have completed working with the the Mail API.
 =======
 **Congratulations! You have completed working with the Mail API.**
 >>>>>>> O3653-2: Updated VS Solution to 2015. Converted to Microsoft Graph API REST calls.  Created seperate projects correlating to each completed exercise.  Updated demo README.  Updated slide deck verbiage and added new section.  This commit addresses issues #152 and #117.
+=======
+The content you accessed had been moved to the following location [Deep Dive into Office 365 with the Microsoft Graph API for Calendar, Mail, and Contacts](../O3653-2%20Deep%20Dive%20into%20Office%20365%20with%20the%20Microsoft%20Graph%20API%20for%20Calendar%2C%20Mail%2C%20and%20Contacts).
+>>>>>>> O3653-2: Addresses issue #337.
