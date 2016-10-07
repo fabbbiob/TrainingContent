@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# Getting started with Microsoft Graph
+# Getting started in Office 365 with the Microsoft Graph API
 In this lab, you will investigate the Microsoft Graph.
 
 ## Prerequisites
@@ -100,16 +99,11 @@ In this exercise you will take the ASP.NET MVC web application you created in th
     * **Read user calendars**    
   1. Click the **Save** button at the bottom of the page.
 
-<<<<<<< HEAD
-     ![](Images/AzurePermission.png)
-1. In the Visual Studio project, add a helper class that will be used to harvest settings out of the `web.config` and create the necessary strings that will be used for authentication:
-=======
      ![Screenshot](Images/AzurePermission.png)
-1. Add a helper class that will be used to harvest settings out of the `web.config` and create the necessary strings that will be used for authentication:
->>>>>>> Accessiblity Fix. Add Alt Text.
+1. In the Visual Studio project, add a helper class that will be used to harvest settings out of the `web.config` and create the necessary strings that will be used for authentication:
 
   1. Right-click the project and select **Add/New Folder**. Give the folder the name **Utils**. 
-  1. Locate the [\\\O3651\O3651-5 Getting started with Office 365 APIs\Lab\Lab Files](/O3651/O3651-5 Getting started with Office 365 APIs/Lab Files) folder provided with this lab and find the [`SettingsHelper.cs`](/O3651/O3651-5 Getting started with Office 365 APIs/Lab Files/SettingsHelper.cs) file.  Drag the [`SettingsHelper.cs`](/O3651/O3651-5 Getting started with Office 365 APIs/Lab Files/SettingsHelper.cs) file to the **Utils** folder in the project.
+  1. Locate the [\\\O3651\O3651-5 Getting started in Office 365 with the Microsoft Graph API\Lab\Lab Files](/O3651/O3651-5 Getting started in Office 365 with the Microsoft Graph API/Lab Files) folder provided with this lab and find the [`SettingsHelper.cs`](/O3651/O3651-5 Getting started in Office 365 with the Microsoft Graph API/Lab Files/SettingsHelper.cs) file.  Drag the [`SettingsHelper.cs`](/O3651/O3651-5 Getting started in Office 365 with the Microsoft Graph API/Lab Files/SettingsHelper.cs) file to the **Utils** folder in the project.
       
 1. Update **_Layout** file to add **Calendar** link:
     1. Open the **_Layout.cshtml** file found in the **Views/Shared** folder.
@@ -141,8 +135,8 @@ In this exercise you will take the ASP.NET MVC web application you created in th
 
         > The **Calendar** link will not work yet... you will add that in the next exercise.
 
-## Exercise 3: Leverage the Microsoft Graph and SDK
-In this exercise you will add a controller and views that utilize the Microsoft Graph and SDK.
+## Exercise 3: Leverage the Microsoft Graph SDK
+In this exercise you will add a controller and views that utilize the Microsoft Graph SDK.
 
 1. Add Microsoft Graph package by NuGet:
   1. Click **View/Other Windows/Package Manager Console**.
@@ -199,7 +193,7 @@ In this exercise you will add a controller and views that utilize the Microsoft 
     }
     ````
 
-  1. Create a method `GetGraphAccessTokenAsync` to get access token for Graph API Authentication:
+  1. Create a method `GetGraphAccessTokenAsync` to get access token for Microsoft Graph API Authentication:
 
     ````c#
     public async Task<string> GetGraphAccessTokenAsync()
@@ -218,7 +212,7 @@ In this exercise you will add a controller and views that utilize the Microsoft 
     }
     ````
 
- 1. Create a method `GetGraphServiceClient` to get GraphServiceClient for calling Graph API:
+ 1. Create a method `GetGraphServiceClient` to get GraphServiceClient for calling Microsoft Graph API:
 
     ````c#
     public static GraphServiceClient GetGraphServiceClient(string token)
@@ -239,7 +233,7 @@ In this exercise you will add a controller and views that utilize the Microsoft 
     ````c#
     public async Task<ActionResult> Index() {}
     ````
-  1. In the `Index()` method, use the `GraphServiceClient` to call Graph Rest API to retrieve the first 20 events in the user's calendar:
+  1. In the `Index()` method, use the `GraphServiceClient` to call Microsoft Graph API to retrieve the first 20 events in the user's calendar:
 
     ````c#
     var eventsResults = new List<MyEvent>();
@@ -321,6 +315,3 @@ In this exercise you will add a controller and views that utilize the Microsoft 
    
 
 **Congratulations! You have completed your first Microsoft Graph application.**
-=======
-The content you accessed had been moved to the following location [Getting started in Office 365 with the Microsoft Graph API](../O3651-5%20Getting%20started%20in%20Office%20365%20with%20the%20Microsoft%20Graph%20API).
->>>>>>> O3651-5: Addresses issues #341 & #342.
