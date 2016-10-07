@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+**Note: If you wish to see the MSAL version of these samples please [click here](MSAL%20Lab.md).**
+
 # Deep Dive into the Microsoft Graph for Office 365 Groups
 In this lab, you will use the Microsoft Graph to access and program against Office 365 Groups using Fiddler and MVC web app.
 
@@ -42,7 +43,7 @@ Using these accounts, create and interact with some groups using the web interfa
 
       ![Screenshot of the previous step](Images/Figure27.png)	       
                
-   1. Select the **contoso.png** file in the [\\\O3653\O3653-9 Groups API\Lab Files](Lab Files) folder within this lab as the new icon for the group.
+   1. Select the **contoso.png** file in the [\\\O3653\O3653-9 Deep Dive into Office 365 with the Microsoft Graph API for Groups\Lab Files](Lab Files) folder within this lab as the new icon for the group.
    1. Click **Save** button. 
 1. With the icon set, start up a conversation in the group that other members can participate in.
    1. Click the **New conversation** link in the middle-pane and enter the following message:
@@ -50,13 +51,8 @@ Using these accounts, create and interact with some groups using the web interfa
 	  Does anyone have prior relationships with firms that do corporate valuations?
 	  ```
 	
-<<<<<<< HEAD
    1. Once you send the message, you will see the message appear in the list of conversations:
-      ![](Images/Figure04.png)	
-=======
-   1. Once you save the message, you will see the message appear in the list of conversations:
       ![Screenshot of the previous step](Images/Figure04.png)	
->>>>>>> Add alt text to screenshots in training content
 
 1. At this point the current user (*Rob Walters*) is not subscribed to the group. Ideally all messages to this group should show up in his mailbox. To do this, right click the group name on left-hand navigation, select **View Details**, then click the eclipse button and then click **Subscribe**.
     > Conversations are just one of the features available in groups. In addition to conversations there is a shared calendar, files, notebook and other options. Feel free to explore and add additional content.
@@ -88,12 +84,8 @@ Using these accounts, create and interact with some groups using the web interfa
     ![](Images/Figure32.png)
 
 1. Enter **contoso** as the search term and press **ENTER**.
-<<<<<<< HEAD
 
-    ![](Images/Figure06.png)
-=======
     ![Screenshot of the previous step](Images/Figure06.png)
->>>>>>> Add alt text to screenshots in training content
 
 1. Select the group **Contoso Merger Working Group** & click the **Join** button to join the group.
 1. You should now be able to go back to main page for your inbox and see the group listed in the left-hand pane. Notice that you can see all the conversations and other aspects of the group.
@@ -300,8 +292,8 @@ Now that you have an access token, create a few requests to the Microsoft Graph'
 	
 In this exercise, you used the raw REST API interface of the Groups API by Fiddler tools to interact with the different capabilities.
 
-## Exercise 4: Use MVC web app to access the Microsoft Graph SDK for Office 365 Groups
-In this exercise, you will use MVC web app to access the Microsoft Graph for Office 365 Groups.
+## Exercise 4: Use MVC web app to utilize the Microsoft Graph SDK against Office 365 Groups
+In this exercise, you will use MVC web app to utilize the Microsoft Graph SDK against Office 365 Groups.
 
 1. Within a browser, navigate to the **Azure Management Portal**: https://manage.windowsazure.com, find the application that you created in Exercise 2.
     ![Screenshot of the previous step](Images/Figure30.png) 
@@ -316,7 +308,7 @@ In this exercise, you will use MVC web app to access the Microsoft Graph for Off
     ![Screenshot of the previous step](Images/Figure17.png) 
 
 1. Click the **Save** button at the bottom of the page.
-1. Locate the [\\\O3653\O3653-9 Groups API\StarterFiles](StarterFiles) folder that contains a starter project.  The starter project is an ASP.NET MVC5 web application that you will update to call the Microsoft Graph.
+1. Locate the [\\\O3653\O3653-9 Deep Dive into Office 365 with the Microsoft Graph API for Groups\StarterFiles](StarterFiles) folder that contains a starter project.  The starter project is an ASP.NET MVC5 web application that you will update to call the Microsoft Graph.
 1. Open the **Office365Group** Visual Studio solution as an administrator.
 1. Open the **Web.config** file.
     ![Screenshot of the previous step](Images/Figure14.png) 
@@ -410,13 +402,8 @@ In this exercise, you will use MVC web app to access the Microsoft Graph for Off
       
        > **Note:** If you receive an error that indicates ASP.NET could not connect to the SQL database, please see the [SQL Server Database Connection Error Resolution document](../../SQL-DB-Connection-Error-Resolution.md) to quickly resolve the issue. 
 
-<<<<<<< HEAD
       1. On the **Home** page, click **Group** menu, then click **My Organization Groups** button, you will find **My Organization Groups** page like the following screenshot:
-         ![](Images/Figure18.png) 
-=======
-      2. On the **Home** page, click **Group** menu, then click **My Organization Groups** button, you will find **My Organization Groups** page like the following screenshot:
          ![Screenshot of the previous step](Images/Figure18.png) 
->>>>>>> Add alt text to screenshots in training content
 
 1. Add the **joined groups** interface.
    1. Open **Controllers/GroupController.cs** file, use the following code to replace **JoinedGroups** function.
@@ -639,7 +626,4 @@ In this exercise, you will use MVC web app to access the Microsoft Graph for Off
 
 19. Close the browser window, terminate the debugging session, and return to Visual Studio.
 
-**Congratulations! You have completed working with the Microsoft Graph SDK for Office 365 Groups.**
-=======
-The content you accessed had been moved to the following location [O3653-9 Deep Dive into Office 365 with the Microsoft Graph API for Groups](../O3653-9 Deep Dive into Office 365 with the Microsoft Graph API for Groups)
->>>>>>> O3653-9: Addresses issues #334 & #363.
+**Congratulations! You have completed working with the Microsoft Graph SDK against Office 365 Groups.**
