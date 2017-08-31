@@ -183,4 +183,10 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+<<<<<<< HEAD
 >>>>>>> Initial commit
+=======
+
+# MacOS files
+**.DS_Store
+>>>>>>> update gitignore, exclude MacOS files
