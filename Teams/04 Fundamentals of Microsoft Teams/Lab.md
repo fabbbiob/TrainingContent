@@ -487,8 +487,8 @@ These steps assume that the application created in Exercise 1 is named **teams-a
           <div>
             <select name="graph" id="graph"  class="form-control" onchange="onChange(this.value);">
               <option value="" selected>Select one...</option>>
-              <option value="members">Member information</option>
-              <option value="calendar">Group Calendar (requires admin consent)</option>
+              <option value="member">Member information</option>
+              <option value="group">Group information (requires admin consent)</option>
             </select>
           </div>
           <div class="form-field-title">
@@ -772,7 +772,7 @@ These steps assume that the application created in Exercise 1 is named **teams-a
         ```typescript
         public getData(token: string) {
           let graphEndpoint = "https://graph.microsoft.com/v1.0/me";
-          if (this.configuration === "calendar") {
+          if (this.configuration === "group") {
             graphEndpoint = "https://graph.microsoft.com/v1.0/groups/" + this.groupId;
           }
 
