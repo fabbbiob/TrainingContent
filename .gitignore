@@ -189,4 +189,11 @@ FakesAssemblies/
 
 # MacOS files
 **.DS_Store
+<<<<<<< HEAD
 >>>>>>> update gitignore, exclude MacOS files
+=======
+
+# Excluding unwanted files
+Teams/03 Bots/Completed Projects/Bot Application/.vs/
+
+>>>>>>> Updated nuget packages
