@@ -195,5 +195,9 @@ FakesAssemblies/
 
 # Excluding unwanted files
 Teams/03 Bots/Completed Projects/Bot Application/.vs/
+<<<<<<< HEAD
 
 >>>>>>> Updated nuget packages
+=======
+.vscode/
+>>>>>>> Updated .gitignore
