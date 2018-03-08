@@ -18,15 +18,25 @@ Here are some ways you can contribute to this documentation:
 * Report documentation bugs via GitHub Issues
 * Request new documentation at the [Office Developer Platform UserVoice](http://officespdev.uservoice.com) site.
 
+<<<<<<< HEAD
 ## Contribute using GitHub
 
 Use GitHub to contribute to this documentation without having to clone the repo to your desktop. This is the easiest way to create a pull request in this repository. Use this method to make a minor change that doesn't involve code changes. 
+=======
+## Before we can accept your pull request
+
+### Minor corrections
+>>>>>>> Fix CONTRIBUTING Markdown minor render bugs
 
 **Note** Using this method allows you to contribute to one article at a time.
 
 ### To Contribute using GitHub
 
+<<<<<<< HEAD
 1. Find the article you want to contribute to on GitHub. 
+=======
+### Larger submissions
+>>>>>>> Fix CONTRIBUTING Markdown minor render bugs
 
     If the article is in MSDN, choose the **suggest and submit changes** link in the **Contribute to this content** section and you'll be taken to the same article on GitHub.
 2. Once you are on the article in GitHub, sign in to GitHub (get a free account [Join GitHub](https://github.com/join).
@@ -68,10 +78,17 @@ Pull requests are typically reviewed within 10 business days.
 
 ### To set up your fork of the repository
 
+<<<<<<< HEAD
 1.	Set up a GitHub account so you can contribute to this project. If you haven't done this, go to [GitHub](https://github.com/join) and do it now.
 2.	Install Git on your computer. Follow the steps in the [Setting up Git Tutorial] [Set Up Git].
 3.	Create your own fork of this repository. To do this, at the top of the page,  choose the **Fork** button.
 4.	Copy your fork to your computer. To do this, open Git Bash. At the command prompt enter:
+=======
+1.	Set up a GitHub account so you can contribute to this project. If you haven't done this already, please go to [GitHub Home] and do it now.
+2.	Set up your machine with Git. Follow the instructions in the [Setting up Git Tutorial][Set Up Git].
+3.	Create your own fork of this repository. To do this, at the top of the page,  click the **Fork** button.
+4.	Copy your fork to your local machine. To do this, go open GitBash. At the command prompt enter:
+>>>>>>> Fix CONTRIBUTING Markdown minor render bugs
 
         git clone https://github.com/<your user name>/<repo name>.git
 
