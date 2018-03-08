@@ -74,7 +74,11 @@ Pull requests are typically reviewed within 10 business days.
 
 ## Use GitHub, Git, and this repository
 
+<<<<<<< HEAD
 **Note:** Most of the information in this section can be found in [GitHub Help] articles.  If you're familiar with Git and GitHub, skip to the **Contribute and edit content** section for the specifics of the code/content flow of this repository.
+=======
+**Note:** Most of the information in this section can be found in [GitHub Help] articles.  If you're familiar with Git and GitHub, skip to the **Contribute and edit content** section for the particulars of the code/content flow of this repository.
+>>>>>>> Fix referenced anchors and condense
 
 ### To set up your fork of the repository
 
@@ -85,7 +89,7 @@ Pull requests are typically reviewed within 10 business days.
 4.	Copy your fork to your computer. To do this, open Git Bash. At the command prompt enter:
 =======
 1.	Set up a GitHub account so you can contribute to this project. If you haven't done this already, please go to [GitHub Home] and do it now.
-2.	Set up your machine with Git. Follow the instructions in the [Setting up Git Tutorial][Set Up Git].
+2.	Set up your machine with Git. Follow the instructions in the [Setting up Git Tutorial].
 3.	Create your own fork of this repository. To do this, at the top of the page,  click the **Fork** button.
 4.	Copy your fork to your local machine. To do this, go open GitBash. At the command prompt enter:
 >>>>>>> Fix CONTRIBUTING Markdown minor render bugs
@@ -189,10 +193,19 @@ Congratulations, you have successfully contributed to the project!
 
 ### Standard Markdown
 
+<<<<<<< HEAD
 All of the articles in this repository use Markdown. A complete introduction (and listing of all the syntax) can be found at [Markdown Home](http://daringfireball.net/projects/markdown/ 
 ).
  
 ## FAQ
+=======
+All of the articles in this repository use Markdown.  While a complete introduction (and listing of all the syntax) can be found at [Markdown Home], we'll cover the basics you'll need.
+
+If you're looking for a good editor, try [Markdown Pad].
+
+
+### Markdown basics
+>>>>>>> Fix referenced anchors and condense
 
 ### How do I get a GitHub account?
 
@@ -224,6 +237,6 @@ Pull requests are typically reviewed within 10 business days.
 
 [GitHub Home]: http://github.com
 [GitHub Help]: http://help.github.com/
-[Set Up Git]: http://help.github.com/win-set-up-git/
+[Setting up Git Tutorial]: http://help.github.com/win-set-up-git/
 [Markdown Home]: http://daringfireball.net/projects/markdown/
 [Daring Fireball]: http://daringfireball.net/
