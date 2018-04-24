@@ -472,3 +472,5 @@ Example: example.sharepoint.com or /sites/example
 	>**Note:** The Check in and Check out functionality is a simulation.  Nothing is actually happening to any data sources when you click these buttons.
 
 Congratulations! You have created an web site and added it as a Tab in Microsoft Teams.
+
+<img src="https://telemetry.sharepointpnp.com/TrainingContent/Teams/01-tabs" />

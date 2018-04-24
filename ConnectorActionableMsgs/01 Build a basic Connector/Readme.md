@@ -31,4 +31,11 @@ In this lab, you will walk through designing, building, registering, and deployi
 
 ## Disclaimer
 
+<<<<<<< HEAD
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+=======
+## Contributors
+
+
+<img src="https://telemetry.sharepointpnp.com/TrainingContent/ConnectorActionableMsgs/01-build-a-basic-connector" />
+>>>>>>> Adding usage tracking images to the modules
