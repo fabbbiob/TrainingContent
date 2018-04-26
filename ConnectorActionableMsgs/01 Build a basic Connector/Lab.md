@@ -460,4 +460,4 @@ The connector is now sideloaded into the Microsoft Teams application.
     > Note: Before your Connector can receive callbacks for actionable messages, you must register it and publish the app.
 >>>>>>> Update Lab.md
 
-This concludes Exercise 3.
+This concludes Exercise 3. 
