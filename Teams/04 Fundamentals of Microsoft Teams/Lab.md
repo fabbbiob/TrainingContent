@@ -6,7 +6,7 @@ In this lab, you will prepare your computer for developing Microsoft Teams apps,
 
 1. [Create and test a basic Microsoft Teams app using Yeoman](#exercise1)
 1. [Create and test a basic Microsoft Teams bot using Visual Studio](#exercise2)
-1. [Call Microsoft Graph inside a tab](#exercise3)
+1. [Call the Microsoft Graph API inside a tab](#exercise3)
 
 ## Prerequisites
 
@@ -28,14 +28,14 @@ After installing node, make sure **npm** is up to date by running following comm
 npm install -g npm
 ````
 
-#### Install Yeoman and Gulp
+#### Install Yeoman, Gulp, Gulp-cli and TypeScript
 
-[Yeoman](http://yeoman.io/) helps you start new projects, and prescribes best practices and tools to help you stay productive. This lab uses a Yeoman generator for Microsoft Teams to quickly create a working, JavaScript-based solution.
+[Yeoman](http://yeoman.io/) helps you start new projects, and prescribes best practices and tools to help you stay productive. This lab uses a Yeoman generator for Microsoft Teams to quickly create a working, JavaScript-based solution. The generated solution uses Gulp, Gulp CLI and TypeScript to run tasks.
 
-Enter the following command to install Yeoman and Gulp:
+Enter the following command to install the prerequisites:
 
 ````shell
-npm install -g yo gulp
+npm install -g yo gulp gulp-cli typescript
 ````
 
 #### Install Yeoman Teams generator
@@ -64,7 +64,7 @@ You can use any code editor or IDE that supports these technologies, however the
 
 #### Bot template for Visual Studio 2017
 
-Download and install the [bot application template](http://aka.ms/bf-bc-vstemplate) zip. Save the zip file to your Visual Studio 2017 templates directory which is traditionally located in **%USERPROFILE%\Documents\Visual Studio 2017\Templates\ProjectTemplates\**.
+Download and install the [bot application template](https://marketplace.visualstudio.com/items?itemName=BotBuilder.BotBuilderV3). The extension can be installed by double-clicking on the VSIX file.
 
    ![Screenshot of templates directory highlighting bot application.](Images/BotTemplate.png)
 
@@ -131,7 +131,7 @@ When the solution was generated, you used a placeholder URL. Now that the tunnel
 
 1. Open the **manifest.json** file in the **manifest** folder.
 
-1. Replace all instances of `tbd.ngrok.io` with the HTTPS forwarding address from the ngrok window. In this example, the forwarding address is **https://0f3b4f62.ngrok.io**. There are six URLs that need to be changed.
+1. Replace all instances of `tbd.ngrok.io` with the HTTPS forwarding address from the ngrok window. In this example, the forwarding address is **0f3b4f62.ngrok.io**. There are five URLs that need to be changed.
 
 1. Save the **manifest.json** file.
 
@@ -150,13 +150,13 @@ When the solution was generated, you used a placeholder URL. Now that the tunnel
 
     > Note: The gulp serve process must be running in order to see the tab in the Microsoft Teams application. When the process is no longer needed, press **CTRL+C** to cancel the server.
 
-### Sideload app into Microsoft Teams
+### Upload app into Microsoft Teams
 
 1. In the Microsoft Teams application, select the **Create and join team** link. Then select the **Create team** button.
 
     ![Screenshot of Microsoft Teams application highlighting create and join team.](Images/Exercise1-08.png)
 
-1. Enter a team name and description. In this example, the team is named **teams-app-1**. Select **Next**.
+1. Enter a team name and description. In this example, the team is named **Training Content**. Select **Next**.
 
 1. Optionally, invite others from your organization to the team. This step can be skipped in this lab.
 <<<<<<< HEAD
@@ -192,7 +192,7 @@ When the solution was generated, you used a placeholder URL. Now that the tunnel
 
     ![Screenshot of Microsoft Teams app.](Images/Exercise1-12.png)
 
-The app is now sideloaded into the Microsoft Teams application and the tab is available in the **Tab Gallery**.
+The app is now uploaded into the Microsoft Teams application and the tab is available in the **Tab Gallery**.
 
 ### Add tab to team view
 
@@ -200,7 +200,7 @@ The app is now sideloaded into the Microsoft Teams application and the tab is av
 
 1. Select the **+** icon at the end of the tab strip.
 
-1. In the tab gallery, sideloaded tabs are displayed in the **Tabs for your team** section. Tabs in this section are arranged alphabetically. Select the tab created in this lab.
+1. In the tab gallery, uploaded tabs are displayed in the **Tabs for your team** section. Tabs in this section are arranged alphabetically. Select the tab created in this lab.
 
     ![Screenshot of tab gallery with teams app1 highlighted.](Images/Exercise1-13.png)
 
@@ -222,19 +222,15 @@ This section of the lab introduces the Bot Framework template and its capabiliti
 
 1. In Visual Studio 2017, select **File > New > Project**.
 
-1. Create a new Visual C# project using the **Bot Application Template**.
+1. Create a new Bot Framework project using the **Bot Builder Echo Bot** template.
 
    ![Screenshot of Visual C# new project menu.](Images/Exercise2-01.png)
-
-1. Build the solution to download all configured NuGet packages.
-
-1. Right-click on the project in Solution Explorer and select **Manage Nuget Packages**. Update all the packages, ensuring that the **Microsoft.Bot.Builder** is at least version 3.12. Repeat until all the packages are up to date.
 
     The bot application template is a fully functional echo bot that takes the user's text utterance as input and returns it as output. In order to run the bot inside Microsoft Teams:
 
     - The bot must be accessible from the internet
     - The bot must be registered with the Bot Connector
-    - The `AppId` and `AppPassword` from the Bot Framework registration page have to be recorded in the project's `web.config`
+    - The `AppId` and `AppSecret` from the Bot Framework registration page have to be recorded in the project's `web.config`
     - The bot must be added to Microsoft Teams
 
     Before registering the bot, note the URL configured for the solution in Visual Studio.
@@ -245,7 +241,7 @@ This section of the lab introduces the Bot Framework template and its capabiliti
 
 1. Note the **Project URL**.
 
-    ![Screenshot of team bot properties highlighting URL.](Images/Exercise2-02.png)
+    ![Screenshot of team bot properties highlighting URL](Images/Exercise2-02.png)
 
 ### Run the ngrok secure tunnel application
 
@@ -263,6 +259,7 @@ This section of the lab introduces the Bot Framework template and its capabiliti
 
 ### Register the bot
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -285,6 +282,9 @@ This section of the lab introduces the Bot Framework template and its capabiliti
 >>>>>>> Update module to current style guide- updated module `readme.md`, `lab.md` and demo `readme.md` files to current Microsoft Style Guide- updated `readme.md` to include reference to recorded screencast of the module
 
 1. Select **Create a bot or skill**. If the create button is not shown, select **My bots** in the top navigation.
+=======
+1. Go to the [Microsoft Bot Framework create page](https://dev.botframework.com/bots/new) at https://dev.botframework.com/bots/new. (Do not use the Create button on the Bot Framework portal home page, as this will redirect to the Azure Portal.) Sign in with your work or school account. If necessary, accept the Terms of service.
+>>>>>>> scheduled quarterly refresh
 
 1. Complete the bot profile section, entering a display name, unique bot handle and description.
 
@@ -293,7 +293,7 @@ This section of the lab introduces the Bot Framework template and its capabiliti
 1. Complete the configuration section.
     - For the **Messaging endpoint**, use the forwarding HTTPS address from ngrok with `/api/messages` appended to provide the route to the **MessagesController** in the Visual Studio project. In the example, this is `https://a2632edd.ngrok.io/api/messages`.
     - Select the **Create Microsoft App ID and password button** to open a new browser window.
-    - In the new browser window the application is registered in Azure Active Directory. Select **Generate an app password to continue**. An app password is generated. Copy the password and save it. You will use it in a subsequent step.
+    - In the new browser window the application is registered in Azure Active Directory. Select **Generate an app password to continue**. An app secret is generated. Copy the secret and save it. You will use it in a subsequent step.
     - Select **OK** to close the dialogue box.
     - Select the **Finish and go back to Bot Framework** button to close the new browser window and populate the app ID in the **Paste your app ID below to continue textbox**.
 
@@ -323,7 +323,7 @@ The bot project must be configured with information from the registration.
 
 1. Enter the `MicrosoftAppId`. The `MicrosoftAppId` is the app ID from the **Configuration** section of the registration.
 
-1. Enter the `MicrosoftAppPassword`. The `MicrosoftAppPassword` is the auto-generated app password displayed in the dialogue box during registration. If you do not have the app password, the bot must be deleted and re-registered. An app password cannot be reset nor displayed.
+1. Enter the `MicrosoftAppPassword`. The `MicrosoftAppPassword` is the auto-generated app secret displayed in the dialogue box during registration. If you do not have the app secret, the bot must be deleted and re-registered. An app secret cannot be reset nor displayed.
 
 ### Test the bot using the portal
 
@@ -423,19 +423,11 @@ Packaging a bot for Microsoft Teams is identical to packaging a tab. A manifest 
 
 1. Select **F5** to run the project. The new **AfterBuild target** will run, creating a zip file in the build output folder (`bin`).
 
-### Sideload app into Microsoft Teams
+### Upload app into Microsoft Teams
 
 Although not strictly necessary, in this lab you will add the bot to a new team.
 
-1. In the Microsoft Teams application, select the **Add team** link. Then select **Create team**.
-
-    ![Screenshot of Microsoft Teams with add team highlighted.](Images/Exercise1-08.png)
-
-1. Enter a team name and description. In this example, the team is named **teams-bot-1**. Select **Next**.
-
-1. Optionally, invite others from your organization to the team. This step can be skipped in this lab.
-
-1. The new team is shown. In the left-side panel, select the ellipses next to the team name. Choose **Manage team** from the menu.
+1. In the Microsoft Teams application, select the ellipses next to the team name. Choose **Manage team** from the menu.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -457,21 +449,21 @@ Although not strictly necessary, in this lab you will add the bot to a new team.
 
     ![Screenshot of Microsoft Teams bot with information about the bot highlighted.](Images/Exercise2-13.png)
 
-    The app is now sideloaded into the Microsoft Teams application and the bot is available.
+    The app is now uploaded into the Microsoft Teams application and the bot is available.
 
 ### Interact with the bot
 
 1. In the general channel for the team, a message is created announcing the bot has been added to the team. To interact with the bot, @ mention the bot.
 
-    ![Screenshot of Microsoft Teams displaying welcome page.](Images/Exercise2-14.png)
+    ![Screenshot of Microsoft Teams displaying the @ mention picker.](Images/Exercise2-14.png)
 
 1. As you test the bot, you will notice that the character count is not correct. You can set breakpoints in the Visual Studio project to debug the code. (Remember, however, that the count was correct using the registration portal.) Later modules of this training will review how to remove mentions from the message.
 
 <a name="exercise3"></a>
 
-## Exercise 3: Call Microsoft Graph inside a tab
+## Exercise 3: Call the Microsoft Graph API inside a tab
 
-This section of the lab will extend the tab created in Exercise 1 to call the Microsoft Graph. The exercise contains many code files. The **Lab Files** folder contains files that contain the code and are provided to facilitate copying the code.
+This section of the lab will extend the tab created in Exercise 1 to call the Microsoft Graph API. The exercise contains many code files. The **Lab Files** folder contains files that contain the code and are provided to facilitate copying the code.
 
 ### Run the ngrok secure tunnel application
 
@@ -489,7 +481,7 @@ This section of the lab will extend the tab created in Exercise 1 to call the Mi
 
 ### Register an application in AAD
 
-To enable an application to call the Microsoft Graph, an application registration is required. This lab uses the [Azure Active Directory v2.0 endpoint](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-compare).
+To enable an application to call the Microsoft Graph API, an application registration is required. This lab uses the [Azure Active Directory v2.0 endpoint](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-compare).
 
 1. Open the [Application Registration Portal](https://apps.dev.microsoft.com).
 
@@ -548,18 +540,18 @@ To enable an application to call the Microsoft Graph, an application registratio
 1. Run the following command:
 
     ```shell
-    npm install msal@0.1.1
+    npm install msal
     ```
 
 ### Configure tab when added to channel
 
-The tab in this exercise can be configured to read information from Microsoft Graph about the current member or about the group in which the channel exists. Perform the following to update the tab configuration.
+The tab in this exercise can be configured to read information from Microsoft Graph API about the current member or about the group in which the channel exists. Perform the following to update the tab configuration.
 
 **Note:** These steps assume that the application created in Exercise 1 is named **teams-app-1**. Paths listed in this section are relative to the **src/app/** folder in the generated application.
 
 1. Open the file **scripts/teamsApp1TabConfig.tsx**.
-1. At the top of the file is an `import` statement with several components from `msteams-ui-components-react'. Add `Dropdown` to the list of componentns.
-1. Locate the `ITeamsApp1TabConfigState` class. Rename the `value` property to `selectedConfiguration`.
+1. At the top of the file is an `import` statement with several components from `msteams-ui-components-react`. Add `Dropdown` to the list of components.
+1. Locate the `IteamsApp1TabConfigState` class. Rename the `value` property to `selectedConfiguration`.
 
     ```typescript
     export interface IteamsApp1TabConfigState extends ITeamsBaseComponentState {
@@ -594,7 +586,7 @@ The tab in this exercise can be configured to read information from Microsoft Gr
 
     ```typescript
     microsoftTeams.settings.setSettings({
-      contentUrl: host + "/teamsApp1TabTab.html?data=",
+      contentUrl: host + "/teamsApp1Tab.html?data=",
       suggestedDisplayName: 'teams app1 Tab',
       removeUrl: host + "/teamsApp1TabRemove.html",
       entityId: this.state.selectedConfiguration
@@ -651,6 +643,9 @@ The tab in this exercise can be configured to read information from Microsoft Gr
           })
         }
       />
+      <div style={styles.section}>
+        <PrimaryButton onClick={() => this.getAdminConsent()}>Provide administrator consent - click if Tenant Admin</PrimaryButton>
+      </div>
     </PanelBody>
     ```
 
@@ -707,10 +702,9 @@ The tab in this exercise can be configured to read information from Microsoft Gr
 
 1. Add a new file to the **scripts** folder named **adminconsent.ts**.
 
-1. Add the following to the **adminconsent.ts** file. There is a token named `application-id-from-registration` that must be replaced. Use the value of the Application ID copied from the application registration page.
+1. Add the following to the **adminconsent.ts** file. There is a token named `app-id-from-registration` that must be replaced. Use the value of the Application ID copied from the application registration page.
 
     ```typescript
-    /// <reference path="../../../node_modules/msal/out/msal.d.ts" />
     /**
     * Implementation of the teams tab1 AdminConsent page
     */
@@ -725,8 +719,8 @@ The tab in this exercise can be configured to read information from Microsoft Gr
       public requestConsent(tenantId:string) {
         let host = "https://" + window.location.host;
         let redirectUri = "https://" + window.location.host + "/adminconsent.html";
-        let clientId = "[application-id-from-registration]";
-        let state = "officedev-traniningconent"; // any unique value
+        let clientId = "[app-id-from-registration]";
+        let state = "officedev-trainingconent"; // any unique value
 
         var consentEndpoint = "https://login.microsoftonline.com/common/adminconsent?" +
                               "client_id=" + clientId +
@@ -774,18 +768,18 @@ With the tab configured, the content page can now render information as selected
 
 **Note:** These steps assume that the application created in Exercise 1 is named **teams-app-1**. Paths listed in this section are relative to the **src/app/** folder in the generated application.
 
-1. Open the file **scripts/teamsApp1TabTab.tsx**.
+1. Open the file **scripts/teamsApp1Tab.tsx**.
 
-1. Locate the `IteamsApp1TabTabState` interface. Replace the interface definition with the following.
+1. Locate the `IteamsApp1TabState` interface. Replace the interface definition with the following.
 
     ```typescript
-    export interface IteamsApp1TabTabState extends ITeamsBaseComponentState {
+    export interface IteamsApp1TabState extends ITeamsBaseComponentState {
       entityId?: string;
       graphData?: string;
     }
     ```
 
-1. Locate the `teamsApp1TabTab` class. Add the following class-level variable declarations.
+1. Locate the `teamsApp1Tab` class. Add the following class-level variable declarations.
 
     ```typescript
     configuration?: string;
@@ -793,7 +787,7 @@ With the tab configured, the content page can now render information as selected
     token?: string;
     ```
 
-1. Add the following function to the `teamsApp1TabTab` object. This function runs in response to the button selection.
+1. Add the following function to the `teamsApp1Tab` object. This function runs in response to the button selection.
 
     ```typescript
     private getGraphData() {
@@ -822,7 +816,7 @@ With the tab configured, the content page can now render information as selected
     }
     ```
 
-1. Add the following method to the `teamsApp1TabTab` class. This method uses XMLHTTP to make a call to the Microsoft Graph and displays the result.
+1. Add the following method to the `teamsApp1TabTab` class. This method uses XMLHTTP to make a call to the Microsoft Graph API and displays the result.
 
     ```typescript
     public getData(token: string) {
@@ -882,9 +876,10 @@ With the tab configured, the content page can now render information as selected
 
 1. Add a new file to the **scripts** folder named **auth.ts**.
 
-1. Add the following to the **auth.ts** file. Note that there is a token named `[application-id-from-registration]` that must be replaced. Use the value of the Application ID copied from the application registration page.
+1. Add the following to the **auth.ts** file. Note that there is a token named `[app-id-from-registration]` that must be replaced. Use the value of the Application ID copied from the application registration page.
 
     ```typescript
+    import * as Msal from 'msal';
     /**
     * Implementation of the teams app1 Auth page
     */
@@ -903,23 +898,15 @@ With the tab configured, the content page can now render information as selected
         // Setup auth parameters for MSAL
         let graphAPIScopes: string[] = ["https://graph.microsoft.com/user.read", "https://graph.microsoft.com/group.read.all"];
         let userAgentApplication = new Msal.UserAgentApplication(
-                                            "[application-id-from-registration]",
+                                            "[app-id-from-registration]",
                                             "https://login.microsoftonline.com/common",
                                             this.tokenReceivedCallback);
 
         if (userAgentApplication.isCallback(window.location.hash)) {
-          userAgentApplication.handleAuthenticationResponse(
-            window.location.hash,
-            (token) => {
-              if (this.user == null) {
-                this.user = userAgentApplication.getUser()!;
-                this.getToken(userAgentApplication, graphAPIScopes);
-              } else {
-                microsoftTeams.authentication.notifySuccess(token);
-              }
-            },
-            (error) => { microsoftTeams.authentication.notifyFailure(error); }
-          );
+          var user = userAgentApplication.getUser();
+          if (user) {
+            this.getToken(userAgentApplication, graphAPIScopes);
+          }
         } else {
           this.user = userAgentApplication.getUser();
           if (!this.user) {
@@ -933,8 +920,8 @@ With the tab configured, the content page can now render information as selected
       }
 
       private getToken(userAgentApplication: Msal.UserAgentApplication, graphAPIScopes: string[]) {
-        // In order to call the Graph API, an access token needs to be acquired.
-        // Try to acquire the token used to query Graph API silently first:
+        // In order to call the Microsoft Graph API, an access token needs to be acquired.
+        // Try to acquire the token used to query Microsoft Graph API silently first:
         userAgentApplication.acquireTokenSilent(graphAPIScopes).then(
           (token) => {
             //After the access token is acquired, return to MS Teams, sending the acquired token
@@ -965,4 +952,4 @@ With the tab configured, the content page can now render information as selected
 
 1. Refresh the tab in Microsoft Teams. Select the **Get Microsoft Graph Data** button to invoke the authentication and call to **graph.microsoft.com**.
 
-    ![Screenshot of Microsoft Teams app with Microsoft Graph data displayed.](Images/Exercise3-09.png)
+    ![Screenshot of Microsoft Teams app with a display of Office 365 data exposed via Microsoft Graph.](Images/Exercise3-09.png)
