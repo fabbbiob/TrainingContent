@@ -18,3 +18,15 @@ Configurable tabs are displayed in a channel.
 
     ![Screenshot of Microsoft Teams showing the configurable tab added in the lab](../Images/Exercise1-05.png)
 
+<<<<<<< HEAD
+=======
+Static tabs are displayed in the chat view with the bot.
+
+1. Select the **Chat** icon in the left-side panel of Microsoft Teams.
+
+1. Select the conversation with the Talent Management Bot.
+
+1. The new tab is shown in the Tab Strip above the conversation. Select the tab to display the html page.
+
+    ![Screenshot of Microsoft Teams showing the static tab added in the lab.](../Images/Exercise1-03.png)
+>>>>>>> new module 3
