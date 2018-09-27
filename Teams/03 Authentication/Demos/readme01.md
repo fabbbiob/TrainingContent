@@ -19,6 +19,7 @@ Configurable tabs are displayed in a channel.
     ![Screenshot of Microsoft Teams showing the configurable tab added in the lab](../Images/Exercise1-05.png)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Static tabs are displayed in the chat view with the bot.
 
@@ -30,3 +31,5 @@ Static tabs are displayed in the chat view with the bot.
 
     ![Screenshot of Microsoft Teams showing the static tab added in the lab.](../Images/Exercise1-03.png)
 >>>>>>> new module 3
+=======
+>>>>>>> tab auth

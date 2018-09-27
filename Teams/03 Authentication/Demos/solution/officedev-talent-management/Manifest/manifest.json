@@ -4,6 +4,7 @@
 	"version": "1.0.0",
 	"id": "883168db-03e6-4978-b1c6-08d67a362038",
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"packageName": "io.ngrok.[from ngrok]",
 	"developer": {
 		"name": "Office Developer",
@@ -18,6 +19,14 @@
 		"privacyUrl": "https://f7abd247.ngrok.io/privacy",
 		"termsOfUseUrl": "https://f7abd247.ngrok.io/termsofuse"
 >>>>>>> new module 3
+=======
+	"packageName": "io.ngrok.[from ngrok]",
+	"developer": {
+		"name": "Office Developer",
+		"websiteUrl": "https://[from ngrok].ngrok.io",
+		"privacyUrl": "https://[from ngrok].ngrok.io/privacy",
+		"termsOfUseUrl": "https://[from ngrok].ngrok.io/termsofuse"
+>>>>>>> tab auth
 	},
 	"icons": {
 		"color": "bot-icon-color-192x192.png",
@@ -70,12 +79,17 @@
 			"entityId": "candidatesTab",
 			"name": "Candidates",
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"contentUrl": "https://[from ngrok].ngrok.io/Tabs/candidates.html",
 			"websiteUrl": "https://[from ngrok].ngrok.io/Tabs/candidates.html?web=1",
 =======
 			"contentUrl": "https://f7abd247.ngrok.io/Tabs/candidates.html",
 			"websiteUrl": "https://f7abd247.ngrok.io/Tabs/candidates.html?web=1",
 >>>>>>> new module 3
+=======
+			"contentUrl": "https://[from ngrok].ngrok.io/Tabs/candidates.html",
+			"websiteUrl": "https://[from ngrok].ngrok.io/Tabs/candidates.html?web=1",
+>>>>>>> tab auth
 			"scopes": [
 				"personal"
 			]
@@ -83,6 +97,9 @@
 	],
 	"configurableTabs": [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> tab auth
     {
       "configurationUrl": "https://[from ngrok].ngrok.io/Tabs/hiringTeamConfig.html",
       "canUpdateConfiguration": true,
@@ -91,6 +108,7 @@
       ]
     }
   ],
+<<<<<<< HEAD
 =======
 		{
 			"configurationUrl": "https://f7abd247.ngrok.io/Tabs/channelconfig.html",
@@ -102,6 +120,8 @@
 		}
 	],
 >>>>>>> new module 3
+=======
+>>>>>>> tab auth
 	"connectors": [
 		{
 			"connectorId": "c63a8789-739b-4afd-91db-0e1bd7f213b9",
@@ -109,10 +129,14 @@
 				"team"
 			],
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"configurationUrl": "https://[from ngrok].ngrok.io/Connector/connectorConfig.html"
 =======
 			"configurationUrl": "https://f7abd247.ngrok.io/Connector/connectorConfig.html"
 >>>>>>> new module 3
+=======
+			"configurationUrl": "https://[from ngrok].ngrok.io/Connector/connectorConfig.html"
+>>>>>>> tab auth
 		}
 	],
 	"permissions": [
@@ -120,8 +144,12 @@
 		"messageTeamMembers"
 	],
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"validDomains": [ "[from ngrok].ngrok.io" ]
 =======
 	"validDomains": [ "f7abd247.ngrok.io" ]
 >>>>>>> new module 3
+=======
+	"validDomains": [ "[from ngrok].ngrok.io" ]
+>>>>>>> tab auth
 }
