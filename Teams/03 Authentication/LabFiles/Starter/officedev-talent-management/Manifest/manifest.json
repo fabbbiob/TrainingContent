@@ -4,6 +4,7 @@
 	"version": "1.0.0",
 	"id": "883168db-03e6-4978-b1c6-08d67a362038",
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"packageName": "io.ngrok.[from ngrok]",
 	"developer": {
 		"name": "Office Developer",
@@ -18,6 +19,14 @@
 		"privacyUrl": "https://f7abd247.ngrok.io/privacy",
 		"termsOfUseUrl": "https://f7abd247.ngrok.io/termsofuse"
 >>>>>>> tab auth
+=======
+	"packageName": "io.ngrok.[from ngrok]",
+	"developer": {
+		"name": "Office Developer",
+		"websiteUrl": "https://[from ngrok].ngrok.io",
+		"privacyUrl": "https://[from ngrok].ngrok.io/privacy",
+		"termsOfUseUrl": "https://[from ngrok].ngrok.io/termsofuse"
+>>>>>>> bot auth
 	},
 	"icons": {
 		"color": "bot-icon-color-192x192.png",
@@ -35,10 +44,14 @@
 	"bots": [
 		{
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"botId": "[MicrosoftAppId]",
 =======
 			"botId": "883168db-03e6-4978-b1c6-08d67a362038",
 >>>>>>> tab auth
+=======
+			"botId": "[MicrosoftAppId]",
+>>>>>>> bot auth
 			"supportsFiles": true,
 			"scopes": [
 				"personal",
@@ -49,10 +62,14 @@
 	"composeExtensions": [
 		{
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"botId": "[MicrosoftAppId]",
 =======
 			"botId": "883168db-03e6-4978-b1c6-08d67a362038",
 >>>>>>> tab auth
+=======
+			"botId": "[MicrosoftAppId]",
+>>>>>>> bot auth
 			"scopes": [
 				"team"
 			],
@@ -78,12 +95,17 @@
 			"entityId": "candidatesTab",
 			"name": "Candidates",
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"contentUrl": "https://[from ngrok].ngrok.io/Tabs/candidates.html",
 			"websiteUrl": "https://[from ngrok].ngrok.io/Tabs/candidates.html?web=1",
 =======
 			"contentUrl": "https://f7abd247.ngrok.io/Tabs/candidates.html",
 			"websiteUrl": "https://f7abd247.ngrok.io/Tabs/candidates.html?web=1",
 >>>>>>> tab auth
+=======
+			"contentUrl": "https://[from ngrok].ngrok.io/Tabs/candidates.html",
+			"websiteUrl": "https://[from ngrok].ngrok.io/Tabs/candidates.html?web=1",
+>>>>>>> bot auth
 			"scopes": [
 				"personal"
 			]
@@ -92,10 +114,14 @@
 	"configurableTabs": [
 		{
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"configurationUrl": "https://[from ngrok].ngrok.io/Tabs/channelconfig.html",
 =======
 			"configurationUrl": "https://f7abd247.ngrok.io/Tabs/channelconfig.html",
 >>>>>>> tab auth
+=======
+			"configurationUrl": "https://[from ngrok].ngrok.io/Tabs/channelconfig.html",
+>>>>>>> bot auth
 			"canUpdateConfiguration": true,
 			"scopes": [
 				"groupchat",
@@ -103,6 +129,7 @@
 			]
 		}
 	],
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	"connectors": [
@@ -115,13 +142,19 @@
 		}
 	],
 >>>>>>> tab auth
+=======
+>>>>>>> bot auth
 	"permissions": [
 		"identity",
 		"messageTeamMembers"
 	],
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"validDomains": [ "[from ngrok].ngrok.io" ]
 =======
 	"validDomains": [ "f7abd247.ngrok.io" ]
 >>>>>>> tab auth
+=======
+	"validDomains": [ "[from ngrok].ngrok.io" ]
+>>>>>>> bot auth
 }

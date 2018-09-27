@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 namespace officedev_talent_management.Dialogs
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bot auth
   [Serializable]
   public class RootDialog : IDialog<object>
   {
@@ -167,6 +170,7 @@ namespace officedev_talent_management.Dialogs
       }
     }
   }
+<<<<<<< HEAD
 =======
 	[Serializable]
 	public class RootDialog : IDialog<object>
@@ -320,4 +324,6 @@ namespace officedev_talent_management.Dialogs
 		}
 	}
 >>>>>>> new module 3
+=======
+>>>>>>> bot auth
 }
