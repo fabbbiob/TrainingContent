@@ -6,6 +6,7 @@ The step-by-step instructions for each demo are detailed in the following files:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 1. [Add authentication to a tab](./readme01.md)
 1. [Add authentication to a bot](./readme02.md)
 =======
@@ -16,6 +17,10 @@ The step-by-step instructions for each demo are detailed in the following files:
 1. [Demo 1: Add authentication to a tab](./readme01.md)
 1. [Demo 2: Add authentication to a bot](./readme02.md)
 >>>>>>> tab auth
+=======
+1. [Add authentication to a tab](./readme01.md)
+1. [Add authentication to a bot](./readme02.md)
+>>>>>>> fixup readmes
 
 To run the demo application, perform the following steps.
 
