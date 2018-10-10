@@ -2,9 +2,13 @@
 	"$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.3/MicrosoftTeams.schema.json",
 	"manifestVersion": "1.3",
 	"version": "1.0.0",
+<<<<<<< HEAD
 	"id": "883168db-03e6-4978-b1c6-08d67a362038",
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+	"id": "[microsoft-app-id]",
+>>>>>>> m03 - update demo solution and steps
 	"packageName": "io.ngrok.[from ngrok]",
 	"developer": {
 		"name": "Office Developer",
@@ -43,7 +47,7 @@
 	"accentColor": "#0EA20E",
 	"bots": [
 		{
-			"botId": "883168db-03e6-4978-b1c6-08d67a362038",
+			"botId": "[microsoft-app-id]",
 			"supportsFiles": true,
 			"scopes": [
 				"personal",
@@ -53,7 +57,7 @@
 	],
 	"composeExtensions": [
 		{
-			"botId": "883168db-03e6-4978-b1c6-08d67a362038",
+			"botId": "[microsoft-app-id]",
 			"scopes": [
 				"team"
 			],
