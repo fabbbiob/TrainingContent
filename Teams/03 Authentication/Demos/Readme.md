@@ -1,9 +1,10 @@
-# Demos Readme
+# Microsoft Teams Training Module - Authentication
 
-The module has two demos. The application to run is the same for each demo.
+This folder contains the demos for the Microsoft Teams module on Authentication
 
-The step-by-step instructions for each demo are detailed in the following files:
+## Demos
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -21,9 +22,14 @@ The step-by-step instructions for each demo are detailed in the following files:
 1. [Add authentication to a tab](./readme01.md)
 1. [Add authentication to a bot](./readme02.md)
 >>>>>>> fixup readmes
+=======
+* [Add authentication to a tab](./01-add-authentication-tab/README.md)
+* [Add authentication to a bot](./02-add-authentication-bot/README.md)
+>>>>>>> update lab and readme
 
-To run the demo application, perform the following steps.
+## Running demonstrations
 
+<<<<<<< HEAD
 ## Prerequisites
 
 Developing apps for Microsoft Teams requires preparation for both the Office 365 tenant and the development workstation.
@@ -335,3 +341,6 @@ The app is now installed and ready to run. Refer to the appropriate demo instruc
 1. [Demo 1: Add authentication to a tab](./readme01.md)
 1. [Demo 2: Add authentication to a bot](./readme02.md)
 >>>>>>> tab auth
+=======
+Each demonstration is included as source code for convenience.
+>>>>>>> update lab and readme
