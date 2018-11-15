@@ -195,6 +195,7 @@ FakesAssemblies/
 =======
 
 # Excluding unwanted files
+<<<<<<< HEAD
 Teams/03 Bots/Completed Projects/Bot Application/.vs/
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -217,3 +218,7 @@ Teams/03 Bots/Completed Projects/Bot Application/.vs/
 
 ConnectorActionableMsgs/01 Build a basic Connector/Lab Files/\.vs/
 >>>>>>> 2018q4qa-connactmsg-m01:
+=======
+.vs/
+.vscode/
+>>>>>>> Remove module-specific exclusions;
