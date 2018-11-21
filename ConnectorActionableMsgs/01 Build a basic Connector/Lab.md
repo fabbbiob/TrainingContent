@@ -105,7 +105,19 @@ This exercise will add connector functionality to an existing website. A starter
 
 1. In the properties designer, select the **Web** tab.
 
+<<<<<<< HEAD
 1. Note the project URL.
+=======
+1. Choose the **csproj** file and select **F4** to display the Properties pane.
+
+1. Make note of the **URL** property. It is needed for the tunnel application later.
+
+    >Note: If this were a real solution you would want to enable SSL Encryption (by changing the value to true) because the connector requires it.  During testing ngrok is handling the HTTPS->HTTP redirection.
+
+    ![Screenshot of project URL](Images/Exercise2-04.png)
+
+1. Right-click on the **Models** folder and select **Add > Class**.  Name the class **Subscription**.
+>>>>>>> module 1 updates
 
     ![Screenshot of Solution Explorer highlighting project URL.](./Images/Exercise2-01.png)
 
@@ -131,7 +143,11 @@ This exercise will add connector functionality to an existing website. A starter
 
 1. For the **Company website** field, use the HTTPS forwarding address from the ngrok tunnel.
 
+<<<<<<< HEAD
 1. For the **Configuration page for your Connector** field, use the forwarding HTTPS address from ngrok prepended to the route to the connector page. For this exercise, the route is `/content/connectorConfig.html`.
+=======
+1. Right-click on the **Controllers** folder and select **Add > Controller**. Select **MVC 5 Controller - Empty**. Select **Add**. Name the controller **ConnectorController**. Select **Add**.
+>>>>>>> module 1 updates
 
     ```html
     https://[from-ngrok].ngrok.io/content/connectorConfig.html
@@ -143,15 +159,36 @@ This exercise will add connector functionality to an existing website. A starter
     [from-ngrok].ngrok.io
     ```
 
+<<<<<<< HEAD
 1. Agree to the terms and conditions and select **Save**.
+=======
+1. Place your cursor inside the **Setup** method, right-click and select **Add View...**. Clear the check box for **Use a layout page**. Select **Add**.
+>>>>>>> module 1 updates
 
 1. The registration page will refresh. The refreshed page URL will contain the **id** of the connector. Make note of this **Connector Id** for use in the configuration page.
 
     ![Screenshot of Connectors Developer Dashboard with the Connector ID highlighted](Images/Exercise2-03.png)
 
+<<<<<<< HEAD
 1. To enable testing, the connector must be enabled in Outlook. Select the **Sideload to Outlook** button.
 
     ![Screenshot of Connectors Developer Dashboard with the Sideload to Outlook button highlighted](Images/Exercise2-04.png)
+=======
+    ````html
+    @{
+        Layout = null;
+    }
+    <H2>Register your channel for Task Notification</H2>
+    <p>
+        Select the button to call the "register" endpoint in the sample app, which will register the Connector for the selected channel.
+    </p>
+    <a href="https://outlook.office.com/connectors/Connect?state=myAppsState&app_id=[ApplicationID]&callback_url=[NGROK_HTTPS]/connector/register">
+        <img src="https://o365connectors.blob.core.windows.net/images/ConnectToO365Button.png" alt="Connect to Office 365"/>
+    </a>
+    ````
+
+1. Place your cursor inside the **Register** method, right-click and select **Add View...**. Clear the checkbox for **Use a layout page**. Select **Add**.
+>>>>>>> module 1 updates
 
 ### Add Connector registration to solution
 
@@ -159,9 +196,13 @@ This exercise will add connector functionality to an existing website. A starter
 
 1. Replace the contents of the **connectorConfig.html** page with the code from the **Lab Files\connectorConfig.html** file.
 
+<<<<<<< HEAD
     The html contains tokens that must be replaced with values from the Connector Dashboard and the ngrok tunnel.
     - Replace the token `[connector-id]` with the **Connector Id** from the Connector Developer Dashboard.
     - Replace the token `[from-ngrok]` with the unique identifier from the ngrok forwarding address.
+=======
+1. Place your cursor inside the **Error** method, right-click and select **Add View...**. Clear the checkbox for **Use a layout page**. Select **Add**.
+>>>>>>> module 1 updates
 
 1. Right-click on the **Models** folder and select **Add > Class**.  Name the class **ConnectorSettings**.
 
@@ -176,6 +217,7 @@ This exercise will add connector functionality to an existing website. A starter
     public string WebHookUrl { get; set; }
     ````
 
+<<<<<<< HEAD
 1. Right-click on the **Controllers** folder and select **Add > Controller**.
 
 1. Select **Web API 2 Controller - Empty**. Select **Add**.
@@ -189,6 +231,46 @@ This exercise will add connector functionality to an existing website. A starter
     using System.Threading.Tasks;
     using ToDoConnector.Models;
     ````
+=======
+1. Press **F5** to build and run the project. Verify that the setup page is available by appending `/connector/setup` to the localhost URL. In this example `http://localhost:20455/connector/setup`.
+
+    ![Screenshot of setup page](Images/Exercise2-03.png)
+
+### Run the ngrok secure tunnel application
+
+1. Open a new **Command Prompt** window.
+
+1. Change to the directory that contains the ngrok.exe application.
+
+1. Run the command `ngrok http [port] -host-header=localhost`. Replace `[port]` with the port portion of the URL noted above, in this example `20455`.
+
+1. The ngrok application will fill the entire prompt window. Make note of the forwarding address using HTTPS. This address is required in the next step.
+
+    ![Screenshot of ngrok command prompt](Images/Exercise2-05.png)
+
+1. Minimize the ngrok Command Prompt window. It is no longer referenced in this lab, but it must remain running.
+
+### Register the connector
+
+1. Go to the [Connector Developer Portal](https://aka.ms/connectorsdashboard) and sign in with your Office 365 credentials. 
+
+1. Provide a name, logo, short description and detailed description for your connector.
+
+1. For the **Company website**, use the HTTPS forwarding address from the ngrok tunnel.
+1. For the **Landing page for your users for Inbox** and **Landing page for your users for Groups or Teams** field, use the forwarding HTTPS address from ngrok prepended to the route to the setup endpoint. In the example, this is `https://8555a1a2.ngrok.io/connector/setup`.
+
+1. For the **Redirect URLs** field, use the forwarding HTTPS address from ngrok prepended to the route to the register endpoint. In the example, this is `https://8555a1a2.ngrok.io/connector/register`.
+
+1. Agree to the terms and conditions and choose **Save**.
+
+1. The registration page URL's query string will contain the **id** of the connector. Further, a **Copy Snippet** button is available that will copy the registration 'button' HTML code to your clipboard. You already have the HTML, so you can modify it by hand. Make note of the **id** query string parameter as you will use in the following steps. In addition, when you sideload the connector into Microsoft Teams in [Exercise 3](#exercise3), you will make use of the **Download Manifest** feature.
+
+    ![Screenshot of Connectors Developer Dashboard with the Connector ID highlighted](Images/Exercise2-06.png)
+
+### Modify the register view to include the connector ID and ngrok HTTPS URL
+
+1. Return to Visual Studio, with the web project created earlier opened. Stop the debugger.
+>>>>>>> module 1 updates
 
 1. Replace the generated `ConnectorController` class with the following code. The code is in the **Lab Files\ConnectorController.cs** file.
 
