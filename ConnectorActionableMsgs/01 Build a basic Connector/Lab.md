@@ -405,10 +405,14 @@ This exercise will add connector functionality to an existing website. A starter
     ![Screenshot of Outlook.com with the settings gear and Manage connectors buttons highlighted](Images/Exercise2-05.png)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 1. Find the connector in the **Connectors** pane. Select your connector.
 =======
 1. Find the connector in the **Connectors** pane. Select you connector.
 >>>>>>> Update exercise 2 in lab
+=======
+1. Find the connector in the **Connectors** pane. Select your connector.
+>>>>>>> Lab updates for module 3
 
     ![Screenshot of outlook.com showing the Connectors pane](Images/Exercise2-06.png)
 
@@ -425,14 +429,22 @@ This completes Exercise 2.
 <a name="exercise3"></a>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Exercise 3: Upload the Connector to Microsoft Teams
 =======
 ## Exercise 3: Sideload the Connector to Microsoft Teams
 >>>>>>> Update exercise 2 in lab
+=======
+## Exercise 3: Upload the Connector to Microsoft Teams
+>>>>>>> Lab updates for module 3
 
 To complete this part of the lab, the prerequisites for developing Apps for Microsoft Teams must be completed. The setup steps are detailed on the [Getting Started page](https://msdn.microsoft.com/en-us/microsoft-teams/setup). Pay special attention to the sections **Prepare your Office 365 tenant**.
 
+<<<<<<< HEAD
 ### Create Microsoft Teams app
+=======
+### Upload app into Microsoft Teams
+>>>>>>> Lab updates for module 3
 
 Uploading a Microsoft Teams Connector requires a zip file containing a manifest that describes the connector along with related resources.
 
@@ -447,10 +459,15 @@ Uploading a Microsoft Teams Connector requires a zip file containing a manifest 
     },
     ````
 
+<<<<<<< HEAD
 1. Remove the protocol from the entry in the 'validDomains` section. The entry should be similar to `[from-ngrok].ngrok.io.
+=======
+1. Add the manifest.json plus the `Lab Files/Teams/connector-icon-outline.png` and `Lab Files/Teams/connector-icon-color.png` to a zip file. In this demo, the zip file is named **ToDoConnector.zip**.
+>>>>>>> Lab updates for module 3
 
 1. Copy the image files `Lab Files/Teams/connector-icon-outline.png` and `Lab Files/Teams/connector-icon-color.png` to the directory with the downloaded manifest.
 
+<<<<<<< HEAD
 1. In **Windows Explorer**, select the `manifest.json`, `connector-icon-outline.png` and `connector-icon-color.png` files. Right-click and select **Send to > Compressed (zipped) folder**. Name the zip file **ToDoConnector.zip**.
 
     ![Screenshot of Windows Explorer, creating a zip file](Images/Exercise3-01.png)
@@ -459,6 +476,8 @@ Uploading a Microsoft Teams Connector requires a zip file containing a manifest 
 
 1. In the Microsoft Teams application, select the **Create a team** link. Then select the **Create team** button.
 
+=======
+>>>>>>> Lab updates for module 3
 1. Enter a team name and description. In this example, the team is named **Connector Team**. Select **Next**.
 
 1. Optionally, invite others from your organization to the team. This step can be skipped in this lab.
@@ -484,6 +503,7 @@ Uploading a Microsoft Teams Connector requires a zip file containing a manifest 
     ![Screenshot of connectors list in Microsoft Teams](Images/Exercise3-06.png)
 
 1. A dialog window is shown with the configuration page specified in the manifest. Enter a name for the connector instance and select **Save**.
+<<<<<<< HEAD
 
 1. The Connectors dialog will switch to the **Configured** page. The ToDo Connector is displayed. Selecting the **1 Configured** text will show the details of the connector instance.
 
@@ -537,6 +557,17 @@ This concludes Exercise 3.
 
     ![Screenshot of system notification and welcome message in channel](Images/Exercise3-08.png)
 >>>>>>> Formatting/spelling
+=======
+
+1. The Connectors dialog will switch to the **Configured** page. The ToDo Connector is displayed. Selecting the **1 Configured** text will show the details of the connector instance.
+
+    ![Screenshot of configured connectos in Microsoft Teams](Images/Exercise3-07.png)
+
+
+1. A system message is sent to the channel with a notification of the new connection. In addition, the Welcome Message from the website is sent to the channel.
+
+    ![Screenshot of system notification and welcom message in channel](Images/Exercise3-08.png)
+>>>>>>> Lab updates for module 3
 
 This completes Exercise 3.
 >>>>>>> Update module to current style guide
