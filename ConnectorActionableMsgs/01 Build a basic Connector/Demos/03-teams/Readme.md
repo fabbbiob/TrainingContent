@@ -32,10 +32,14 @@ To run this demo, perform the following steps:
 1. In **Windows Explorer**, select the `manifest.json`, `connector-icon-outline.png` and `connector-icon-color.png` files. Right-click and select **Send to > Compressed (zipped) folder**. Name the zip file **ToDoConnector.zip**.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     ![Screenshot of Windows Explorer, creating a zip file](../../Images/Exercise3-01.png)
 =======
     ![Screenshot of Windows Explorer, creating a zip file](Images/Exercise3-01.png)
 >>>>>>> Update demo3
+=======
+    ![Screenshot of Windows Explorer, creating a zip file](../../Images/Exercise3-01.png)
+>>>>>>> Fixes
 
 ## Upload app into Microsoft Teams
 
@@ -70,6 +74,7 @@ To run this demo, perform the following steps:
 1. The Connectors dialog will switch to the **Configured** page. The ToDo Connector is displayed. Selecting the **1 Configured** text will show the details of the connector instance.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     ![Screenshot of configured connectors in Microsoft Teams](../../Images/Exercise3-07.png)
 
 1. A system message is sent to the channel with a notification of the new connection. In addition, the Welcome Message from the website is sent to the channel.
@@ -82,3 +87,10 @@ To run this demo, perform the following steps:
 
     ![Screenshot of system notification and welcome message in channel](Images/Exercise3-08.png)
 >>>>>>> Update demo3
+=======
+    ![Screenshot of configured connectors in Microsoft Teams](../../Images/Exercise3-07.png)
+
+1. A system message is sent to the channel with a notification of the new connection. In addition, the Welcome Message from the website is sent to the channel.
+
+    ![Screenshot of system notification and welcome message in channel](../../Images/Exercise3-08.png)
+>>>>>>> Fixes
