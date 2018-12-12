@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 ﻿<!-- Copyright (c) Microsoft Corporation. All rights reserved.
      Licensed under the MIT License. -->
 <!DOCTYPE html>
+=======
+﻿<!DOCTYPE html>
+>>>>>>> Add lab files
 <html>
 
 <head>
@@ -20,8 +24,13 @@
     microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
       var connectorName = $("#connectorName").val();
       connectorSettings.configName = connectorName;
+<<<<<<< HEAD
       connectorSettings.entityId = "[connector-id]";
       connectorSettings.contentUrl = "https://[from-ngrok].ngrok.io/content/connectorConfig.html";
+=======
+      connectorSettings.entityId = "b5f88857-7a08-469f-91d6-870bbcc18c1f";
+      connectorSettings.contentUrl = "https://eecec96e.ngrok.io/content/connectorConfig.html";
+>>>>>>> Add lab files
 
       microsoftTeams.settings.setSettings({
         entityId: connectorSettings.entityId,
