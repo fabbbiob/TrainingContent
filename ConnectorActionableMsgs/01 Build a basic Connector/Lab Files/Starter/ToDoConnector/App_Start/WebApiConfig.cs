@@ -5,6 +5,7 @@ using System.Web.Http;
 
 namespace ToDoConnector
 {
+<<<<<<< HEAD
   public static class WebApiConfig
   {
     public static void Register(HttpConfiguration config)
@@ -21,4 +22,22 @@ namespace ToDoConnector
       );
     }
   }
+=======
+	public static class WebApiConfig
+	{
+		public static void Register(HttpConfiguration config)
+		{
+			// Web API configuration and services
+
+			// Web API routes
+			config.MapHttpAttributeRoutes();
+
+			config.Routes.MapHttpRoute(
+					name: "DefaultApi",
+					routeTemplate: "api/{controller}/{id}",
+					defaults: new { id = RouteParameter.Optional }
+			);
+		}
+	}
+>>>>>>> Add starter project to lab
 }

@@ -149,7 +149,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+<<<<<<< HEAD
     <Folder Include="Models\" />
+=======
+>>>>>>> Add starter project to lab
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
