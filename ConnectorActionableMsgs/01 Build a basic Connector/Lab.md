@@ -277,7 +277,6 @@ This exercise will add connector functionality to an existing website. A starter
     - Replace the token `[connector-id]` with the **Connector Id** from the Connector Developer Dashboard.
     - Replace the token `[from-ngrok]` with the unique identifier from the ngrok forwarding address.
 
-
 1. Right-click on the **Models** folder and select **Add > Class**.  Name the class **ConnectorSettings**.
 
 >>>>>>> Update exercise 2 in lab
@@ -441,10 +440,14 @@ This completes Exercise 2.
 To complete this part of the lab, the prerequisites for developing Apps for Microsoft Teams must be completed. The setup steps are detailed on the [Getting Started page](https://msdn.microsoft.com/en-us/microsoft-teams/setup). Pay special attention to the sections **Prepare your Office 365 tenant**.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Create Microsoft Teams app
 =======
 ### Upload app into Microsoft Teams
 >>>>>>> Lab updates for module 3
+=======
+### Create Microsoft Teams app
+>>>>>>> Formatting/spelling
 
 Uploading a Microsoft Teams Connector requires a zip file containing a manifest that describes the connector along with related resources.
 
@@ -460,6 +463,7 @@ Uploading a Microsoft Teams Connector requires a zip file containing a manifest 
     ````
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 1. Remove the protocol from the entry in the 'validDomains` section. The entry should be similar to `[from-ngrok].ngrok.io.
 =======
 1. Add the manifest.json plus the `Lab Files/Teams/connector-icon-outline.png` and `Lab Files/Teams/connector-icon-color.png` to a zip file. In this demo, the zip file is named **ToDoConnector.zip**.
@@ -468,6 +472,10 @@ Uploading a Microsoft Teams Connector requires a zip file containing a manifest 
 1. Copy the image files `Lab Files/Teams/connector-icon-outline.png` and `Lab Files/Teams/connector-icon-color.png` to the directory with the downloaded manifest.
 
 <<<<<<< HEAD
+=======
+1. Copy the image files `Lab Files/Teams/connector-icon-outline.png` and `Lab Files/Teams/connector-icon-color.png` to the directory with the downloaded manifest.
+
+>>>>>>> Formatting/spelling
 1. In **Windows Explorer**, select the `manifest.json`, `connector-icon-outline.png` and `connector-icon-color.png` files. Right-click and select **Send to > Compressed (zipped) folder**. Name the zip file **ToDoConnector.zip**.
 
     ![Screenshot of Windows Explorer, creating a zip file](Images/Exercise3-01.png)
@@ -561,13 +569,16 @@ This concludes Exercise 3.
 
 1. The Connectors dialog will switch to the **Configured** page. The ToDo Connector is displayed. Selecting the **1 Configured** text will show the details of the connector instance.
 
-    ![Screenshot of configured connectos in Microsoft Teams](Images/Exercise3-07.png)
-
+    ![Screenshot of configured connectors in Microsoft Teams](Images/Exercise3-07.png)
 
 1. A system message is sent to the channel with a notification of the new connection. In addition, the Welcome Message from the website is sent to the channel.
 
+<<<<<<< HEAD
     ![Screenshot of system notification and welcom message in channel](Images/Exercise3-08.png)
 >>>>>>> Lab updates for module 3
+=======
+    ![Screenshot of system notification and welcome message in channel](Images/Exercise3-08.png)
+>>>>>>> Formatting/spelling
 
 This completes Exercise 3.
 >>>>>>> Update module to current style guide
