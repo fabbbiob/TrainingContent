@@ -150,9 +150,13 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Folder Include="Models\" />
 =======
 >>>>>>> Add starter project to lab
+=======
+    <Folder Include="Models\" />
+>>>>>>> Add copyright notice
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

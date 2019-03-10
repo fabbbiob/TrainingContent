@@ -1,12 +1,18 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add copyright notice
 ﻿/*
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Licensed under the MIT license.
  */
 using System;
+<<<<<<< HEAD
 =======
 ﻿using System;
 >>>>>>> Add starter project to lab
+=======
+>>>>>>> Add copyright notice
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
