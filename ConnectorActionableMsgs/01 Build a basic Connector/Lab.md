@@ -269,7 +269,7 @@ This exercise will add connector functionality to an existing website. A starter
 
 ### Add Connector registration to solution
 
-1. Right-click on the **Content** folder and select **Add > HTML Page**. Name the page **connectorConfig.html**. Select **OK**.
+1. In **Visual Studio**, right-click on the **Content** folder and select **Add > HTML Page**. Name the page **connectorConfig.html**. Select **OK**.
 
 1. Replace the contents of the **connectorConfig.html** page with the code from the **Lab Files\connectorConfig.html** file.
 
@@ -291,6 +291,7 @@ This exercise will add connector functionality to an existing website. A starter
     public string WebHookUrl { get; set; }
     ````
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 1. Right-click on the **Controllers** folder and select **Add > Controller**.
@@ -338,6 +339,8 @@ This exercise will add connector functionality to an existing website. A starter
     using System.Threading.Tasks;
     ````
 
+=======
+>>>>>>> Lab fixes
 1. Right-click on the **Controllers** folder and select **Add > Controller**.
 
 1. Select **Web API 2 Controller - Empty**. Select **Add**.
@@ -353,7 +356,7 @@ This exercise will add connector functionality to an existing website. A starter
     ````csharp
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
-    using ToDoController.Models;
+    using ToDoConnector.Models;
     ````
 >>>>>>> Update exercise 2 in lab
 
@@ -464,6 +467,7 @@ Uploading a Microsoft Teams Connector requires a zip file containing a manifest 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 1. Remove the protocol from the entry in the 'validDomains` section. The entry should be similar to `[from-ngrok].ngrok.io.
 =======
 1. Add the manifest.json plus the `Lab Files/Teams/connector-icon-outline.png` and `Lab Files/Teams/connector-icon-color.png` to a zip file. In this demo, the zip file is named **ToDoConnector.zip**.
@@ -473,6 +477,10 @@ Uploading a Microsoft Teams Connector requires a zip file containing a manifest 
 
 <<<<<<< HEAD
 =======
+=======
+1. Remove the protocol from the entry in the 'validDomains` section. The entry should be similar to `[from-ngrok].ngrok.io.
+
+>>>>>>> Lab fixes
 1. Copy the image files `Lab Files/Teams/connector-icon-outline.png` and `Lab Files/Teams/connector-icon-color.png` to the directory with the downloaded manifest.
 
 >>>>>>> Formatting/spelling
