@@ -33,6 +33,10 @@ This module has been recorded and is available in the Office Development YouTube
 | ------- | ------------------ | -------------------------------------------- |
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+| 1.6     | June 12, 2019      | 2019Q4 content refresh                       |
+>>>>>>> quarterly refresh
 | 1.5     | March 9, 2019      | 2019Q3 content refresh                       |
 =======
 >>>>>>> Update exercise 2 in lab
