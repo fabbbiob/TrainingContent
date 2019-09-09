@@ -1,30 +1,14 @@
-# Lab: Build a basic connector that works with Microsoft Graph and Microsoft Teams
+# Lab: Outlook Message Cards and Incoming Webhook Connector
 
-In this lab, you will learn the steps to create and send connector cards to Office 365 Groups and Microsoft Teams, and learn the steps for registering a connector with the Office 365 Connectors Developer Dashboard.
+In this lab, you will learn the steps to create and send connector cards to Office 365 Groups.
 
 ## In this lab
 
 1. [Create a card payload and submit it via an incoming webhook](#exercise1)
-1. [Add functionality to an existing web site](#exercise2)
-1. [Upload connector to Microsoft Teams](#exercise3)
 
 ## Prerequisites
 
-This lab will require an Office 365 tenant and a user account that has a mailbox. The exercises that use Microsoft Teams require additional setup. The tenant setup steps are detailed on the [Getting Started page](https://msdn.microsoft.com/en-us/microsoft-teams/setup). Pay special attention to the sections **Prepare your Office 365 tenant** and **Get started with Teams App Studio**.
-
-### Install developer tools
-
-The developer workstation requires the following tools for this lab:
-
-#### Download ngrok
-
-The connector registration process requires an endpoint accessible from the internet via HTTPS. A tunneling application is required for the exercises to work correctly.
-
-This lab uses [ngrok](https://ngrok.com) for tunneling publicly-available HTTPS endpoints to a web server running locally on the developer workstation without an SSL certificate. ngrok is a single-file download that is run from a console.
-
-#### Code editors
-
-The steps and code samples in this lab use [Visual Studio 2017](https://www.visualstudio.com/) for websites using C#.
+This lab will require an Office 365 tenant and a user account that has a mailbox.
 
 <a name="exercise1"></a>
 
@@ -35,23 +19,26 @@ In this exercise, you will copy an example card from the Message Card Playground
 ### Create a group and configure the webhook
 
 1. Open a browser and go to [Microsoft Outlook](https://outlook.office.com). Log in with your Office 365 credentials.
+
 1. Create a new group, or select an existing group.
-1. At the top-right of the screen, select the gear in the content area (not the suite bar).
 
-    ![Screenshot of Outlook.com Group inbox, with arrow indicating the Group settings gear](Images/Exercise1-07.png)
+1. In the Group information card above the message list, select the elipsis (**...**) then select **Settings**.
 
-1. Select **Connectors**.
+    ![Screenshot of Outlook.com Group inbox, showing the group card settings menu](Images/Exercise1-01.png)
 
-    ![Screenshot of group settings menu](Images/Exercise1-01.png)
+1. In the Group Settings pane, select **Connectors**.
+
+    ![Screenshot of group settings menu](Images/Exercise1-02.png)
 
 1. In the list of connectors, scroll down and select **Incoming Webhook**.
 
-    ![Screenshot of list of Connectors with incoming webhook highlighted](Images/Exercise1-02.png)
+    ![Screenshot of list of Connectors with incoming webhook highlighted](Images/Exercise1-03.png)
 
 1. Enter a name for the connector and select **Create**.
+
 1. The page will re-display, now including a URL for the connector. Use the icon next to the URL to copy it to the clipboard.
 
-    ![Screenshot of incoming webhook with URL](Images/Exercise1-03.png)
+    ![Screenshot of incoming webhook with URL](Images/Exercise1-04.png)
 
     > Note: The URL will be used several times in this exercise, as will the clipboard. We recommend pasting the URL into Notepad or other application.
 
@@ -60,9 +47,10 @@ In this exercise, you will copy an example card from the Message Card Playground
 ### Explore MessageCard playground
 
 1. In another browser tab or window, navigate to [MessageCard Playground](https://messagecardplayground.azurewebsites.net).
+
 1. The playground site provides for uploading a custom card definition or reviewing several samples. Use the **select a sample** dropdown to select a sample. This lab requires that the sample uses the **Legacy MessageCard samples** at the bottom of the dropdown.
 
-    ![Screenshot of message card sample](Images/Exercise1-04.png)
+    ![Screenshot of message card sample](Images/Exercise1-05.png)
 
     > Note: Choosing an **Adaptive Card Sample** may result in an error in the next section of the lab.
 
@@ -85,6 +73,7 @@ It is not necessary to use the playground website to send test messages. Any fac
 
     > The `Invoke-RestMethod` cmdlet will return **1** to indicate success.
 
+<<<<<<< HEAD
 <a name="exercise2"></a>
 
 ## Exercise 2: Add connector functionality to existing website
@@ -604,3 +593,5 @@ This concludes Exercise 3.
 
 This completes Exercise 3.
 >>>>>>> Update module to current style guide
+=======
+>>>>>>> Ex1 updates
