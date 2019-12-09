@@ -28,8 +28,12 @@ This module has been recorded and is available in the Office Development YouTube
 | Version |        Date        |        Comments        |
 | ------- | ------------------ | ---------------------- |
 <<<<<<< HEAD
+<<<<<<< HEAD
 | 1.5     | September 6, 2019  | 2020Q1 content refresh |
 =======
+=======
+| 1.6     | December 10, 2019  | 2020Q2 content refresh |
+>>>>>>> m3 updates
 | 1.5     | September 9, 2019  | 2020Q1 content refresh |
 >>>>>>> update history doc
 | 1.4     | June 12, 2019      | 2019Q4 content refresh |
