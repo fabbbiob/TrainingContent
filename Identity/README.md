@@ -9,7 +9,10 @@ This GitHub repo houses all of the content for the "Introduction to Microsoft Id
 - [02 - Application Types](02%20Application%20Types)
 =======
 - [03 - Permission and Consent Framework](03%20Permission%20and%20Consent%20Framework)
+<<<<<<< HEAD
 >>>>>>> New module: "Microsoft Identity - Permissions and Consent Framework"
+=======
+>>>>>>> FY2020Q2 new module screencast add
 
 ----------
 
