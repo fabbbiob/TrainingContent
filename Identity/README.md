@@ -4,6 +4,7 @@
 
 This GitHub repo houses all of the content for the "Introduction to Microsoft Identity Platform" training.
 
+<<<<<<< HEAD
 - [01 - Getting Started with Microsoft Identity](01%20Getting%20Started%20Microsoft%20Identity)
 <<<<<<< HEAD
 - [02 - Application Types](02%20Application%20Types)
@@ -13,6 +14,12 @@ This GitHub repo houses all of the content for the "Introduction to Microsoft Id
 >>>>>>> New module: "Microsoft Identity - Permissions and Consent Framework"
 =======
 >>>>>>> FY2020Q2 new module screencast add
+=======
+- [01 - Getting Started with Microsoft Identity](./01%20Getting%20Started%20Microsoft%20Identity)
+- [02 - Application Types](./02%20Application%20Types)
+- [03 - Permission and Consent Framework](./03%20Permission%20and%20Consent%20Framework)
+- [04 - Secure custom APIs with Microsoft Identity](./04%20Securing%20custom%20APIs)
+>>>>>>> FY20Q3 - New MSIdentity module: "40 - Secure custom APIs with Microsoft Identity"
 
 ----------
 
