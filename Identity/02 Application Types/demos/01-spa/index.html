@@ -18,9 +18,9 @@
   <script>
     var msalConfig = {
       auth: {
-        clientId: '',
-        authority: '',
-        redirectURI: ''
+        clientId: 'bb572832-f3fd-40a6-847c-7ce78baab00b',
+        authority: 'https://login.microsoftonline.com/da444a54-3099-4fb6-ba09-70fef98aa1de',
+        redirectURI: 'https://localhost:3007'
       },
       cache: {
         cacheLocation: "localStorage",
@@ -31,7 +31,7 @@
     var graphConfig = {
       graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
       requestObj: {
-        scopes: ["user.read", "mail.read"]
+        scopes: ["user.read"] //, "mail.read"
       }
     };
 
@@ -65,21 +65,39 @@
     function acquireTokenPopupAndGetUserEmails() {
       // try to get token silently without logging in (ie: from token cache)
       msalApplication.acquireTokenSilent(graphConfig.requestObj)
-        .then(function (tokenResponse) {
-          // request email messages from Microsoft Graph
-          getMessagesFromMSGraph(graphConfig.graphMeEndpoint +'/messages?$top=10&$select=subject', tokenResponse.accessToken, graphAPICallback);
-        }).catch(function (error) {
-          console.log(error);
-          if (requiresInteraction(error.errorCode)) {
-            // unable to get token silently, so log the user in interactively (ie: display popup)
-            msalApplication.acquireTokenPopup(graphConfig.requestObj).then(function (tokenResponse) {
-              // request email messages from Microsoft Graph
-              getMessagesFromMSGraph(graphConfig.graphMeEndpoint +'/messages?$top=10&$select=subject', tokenResponse.accessToken, graphAPICallback);
-            }).catch(function (error) {
-              console.log(error);
-            });
+        .then(
+          function (tokenResponse) {
+            // request email messages from Microsoft Graph
+            getMessagesFromMSGraph(
+              graphConfig.graphMeEndpoint +'/messages?$top=10&$select=subject'
+            , tokenResponse.accessToken
+            , graphAPICallback
+            );
           }
-        });
+        )
+        .catch(
+          function (error) {
+            console.log(error);
+            if (requiresInteraction(error.errorCode)) {
+              // unable to get token silently, so log the user in interactively (ie: display popup)
+              msalApplication.acquireTokenPopup(graphConfig.requestObj).then(
+                function (tokenResponse) {
+                  // request email messages from Microsoft Graph
+                  getMessagesFromMSGraph(
+                    graphConfig.graphMeEndpoint +'/messages?$top=10&$select=subject'
+                  , tokenResponse.accessToken
+                  , graphAPICallback
+                  );
+                }
+              )
+              .catch(
+                function (error) {
+                  console.log(error);
+                }
+              );
+            }
+          }
+        );
     }
 
     // If IE, use the redirect method to acquire an access token / login to Azure AD
@@ -112,10 +130,12 @@
     function authRedirectCallBack(error, response) {
       if (error) {
         console.log(error);
-      } else {
+      } 
+      else {
         if (response.tokenType === "access_token") {
           getMessagesFromMSGraph(graphConfig.graphMeEndpoint +'//messages?$top=10&$select=subject', response.accessToken, graphAPICallback);
-        } else {
+        } 
+        else {
           console.log("token type is:" + response.tokenType);
         }
       }
@@ -144,10 +164,13 @@
 
     function signIn() {
       msalApplication.loginPopup(graphConfig.requestObj)
-        .then(function (loginResponse) {
-          updateWelcomeMessageAndSigninControl();
-          acquireTokenPopupAndGetUserEmails();
-        }).catch(function (error) {
+        .then(
+          function (loginResponse) {
+            updateWelcomeMessageAndSigninControl();
+            acquireTokenPopupAndGetUserEmails();
+          }
+        )
+        .catch(function (error) {
           console.log(error);
         });
     }
@@ -160,11 +183,11 @@
 
     function initPage() {
       // Browser check variables
-      var ua = window.navigator.userAgent;
-      var msie = ua.indexOf('MSIE ');
+      var ua     = window.navigator.userAgent;
+      var msie   = ua.indexOf('MSIE ');
       var msie11 = ua.indexOf('Trident/');
       var msedge = ua.indexOf('Edge/');
-      var isIE = msie > 0 || msie11 > 0;
+      var isIE   = msie > 0 || msie11 > 0;
       var isEdge = msedge > 0;
 
       // if you support IE, recommendation: sign in using Redirect APIs vs. popup

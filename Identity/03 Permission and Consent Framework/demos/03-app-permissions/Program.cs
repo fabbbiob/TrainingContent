@@ -9,13 +9,11 @@ namespace graphdaemon
 {
   class Program
   {
-    static void Main(string[] args)
-    {
+    static void Main(string[] args) {
       Console.WriteLine("Hello World!");
 
       var config = LoadAppSettings();
-      if (config == null)
-      {
+      if (config == null) {
         Console.WriteLine("Invalid appsettings.json file.");
         return;
       }
@@ -24,8 +22,7 @@ namespace graphdaemon
 
       var requestUserEmail = client.Users[config["targetUserId"]].Messages.Request();
       var results = requestUserEmail.GetAsync().Result;
-      foreach (var message in results)
-      {
+      foreach (var message in results) {
         Console.WriteLine("");
         Console.WriteLine("Subject : " + message.Subject);
         Console.WriteLine("Received: " + message.ReceivedDateTime.ToString());
@@ -38,13 +35,13 @@ namespace graphdaemon
 
     private static IAuthenticationProvider CreateAuthorizationProvider(IConfigurationRoot config)
     {
-      var tenantId = config["tenantId"];
-      var clientId = config["applicationId"];
-      var clientSecret = config["applicationSecret"];
-      var authority = $"https://login.microsoftonline.com/{config["tenantId"]}/v2.0";
+      var tenantId      = config["tenantId"];
+      var clientId      = config["applicationId"];
+      var clientSecret  = config["applicationSecret"];
+      var authority     = $"https://login.microsoftonline.com/{config["tenantId"]}/v2.0";
 
       List<string> scopes = new List<string>();
-      scopes.Add("https://graph.microsoft.com/.default");
+      scopes.Add($"{config["graphUri"]}/.default");
 
       var cca = ConfidentialClientApplicationBuilder.Create(clientId)
                                               .WithAuthority(authority)

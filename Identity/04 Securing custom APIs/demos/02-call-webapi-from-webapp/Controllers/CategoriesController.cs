@@ -22,15 +22,15 @@ namespace ProductCatalogWeb.Controllers
       this.application = application;
     }
 
-    private async Task<string> GetTokenForUser()
-    {
+    private async Task<string> GetTokenForUser() {
       // Get the account.
-      string userObjectId = User.FindFirstValue(Constants.ClaimIds.UserObjectId);
-      string tenantId = User.FindFirstValue(Constants.ClaimIds.TenantId);
+      string userObjectId   = User.FindFirstValue(Constants.ClaimIds.UserObjectId);
+      string tenantId       = User.FindFirstValue(Constants.ClaimIds.TenantId);
       var accountIdentifier = $"{userObjectId}.{tenantId}";
-      IAccount account = await application.GetAccountAsync(accountIdentifier);
-
-      var authResult = await application.AcquireTokenSilent(Constants.ProductCatalogAPI.SCOPES.ToArray(), account).ExecuteAsync();
+      
+      IAccount  account     = await application.GetAccountAsync(accountIdentifier);
+      var       authResult  = await application.AcquireTokenSilent(Constants.ProductCatalogAPI.SCOPES.ToArray(), account).ExecuteAsync();
+      
       return authResult.AccessToken;
     }
 

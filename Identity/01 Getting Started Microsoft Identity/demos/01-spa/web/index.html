@@ -21,8 +21,8 @@
   <script>
     var msalConfig = {
       auth: {
-        clientId: '{{APPLICATION_ID}}',
-        authority: 'https://login.microsoftonline.com/{{DIRECTORY_ID}}',
+        clientId: 'aa4dd0a9-f005-4991-92cf-551aca993c47',
+        authority: 'https://login.microsoftonline.com/da444a54-3099-4fb6-ba09-70fef98aa1de',
         redirectURI: 'https://localhost:3007'
       },
       cache: {
@@ -46,12 +46,17 @@
 
     function signIn() {
       msalApplication.loginPopup(graphConfig.requestObj)
-        .then(function (loginResponse) {
-          updateUserInterface();
-          acquireTokenPopupAndGetUser();
-        }).catch(function (error) {
-          console.log(error);
-        });
+        .then(
+          function (loginResponse) {
+            updateUserInterface();
+            acquireTokenPopupAndGetUser();
+          }
+        )
+        .catch(
+          function (error) {
+            console.log(error);
+          }
+        );
     }
 
     function signOut() {
@@ -59,18 +64,18 @@
     }
 
     function getUserFromMSGraph(endpoint, accessToken, callback) {
-      var xmlHttp = new XMLHttpRequest();
-      xmlHttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200)
-          callback(JSON.parse(this.responseText));
-      }
-      xmlHttp.open("GET", endpoint, true); // true for asynchronous
-      xmlHttp.setRequestHeader('Authorization', 'Bearer ' + accessToken);
-      xmlHttp.send();
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200)
+                callback(JSON.parse(this.responseText));
+        }
+        xmlHttp.open("GET", endpoint, true); // true for asynchronous
+        xmlHttp.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+        xmlHttp.send();
     }
 
     function graphAPICallback(data) {
-      document.getElementById("json").innerHTML = JSON.stringify(data, null, 2);
+        document.getElementById("json").innerHTML = JSON.stringify(data, null, 2);
     }
 
     function updateUserInterface() {
@@ -84,38 +89,57 @@
 
     function acquireTokenPopupAndGetUser() {
       msalApplication.acquireTokenSilent(graphConfig.requestObj)
-        .then(function (tokenResponse) {
-          getUserFromMSGraph(graphConfig.graphMeEndpoint, tokenResponse.accessToken, graphAPICallback);
-        }).catch(function (error) {
-          console.log(error);
-          if (requiresInteraction(error.errorCode)) {
-            msalApplication.acquireTokenPopup(graphConfig.requestObj).then(function (tokenResponse) {
-              getUserFromMSGraph(graphConfig.graphMeEndpoint, tokenResponse.accessToken, graphAPICallback);
-            }).catch(function (error) {
-              console.log(error);
-            });
+        .then(
+          function (tokenResponse) {
+            getUserFromMSGraph(graphConfig.graphMeEndpoint, tokenResponse.accessToken, graphAPICallback);
           }
-        });
+        )
+        .catch(
+          function (error) {
+            console.log(error);
+            if (requiresInteraction(error.errorCode)) {
+              msalApplication.acquireTokenPopup(graphConfig.requestObj)
+              .then(
+                function (tokenResponse) {
+                  getUserFromMSGraph(graphConfig.graphMeEndpoint, tokenResponse.accessToken, graphAPICallback);
+                }
+              )
+              .catch(
+                function (error) {
+                  console.log(error);
+                }
+              );
+            }
+          }
+        );
     }
 
     function acquireTokenRedirectAndGetUser() {
-      msalApplication.acquireTokenSilent(graphConfig.requestObj).then(function (tokenResponse) {
-        getUserFromMSGraph(graphConfig.graphMeEndpoint, tokenResponse.accessToken, graphAPICallback);
-      }).catch(function (error) {
-        console.log(error);
-        if (requiresInteraction(error.errorCode)) {
-          msalApplication.acquireTokenRedirect(graphConfig.requestObj);
-        }
-      });
+      msalApplication.acquireTokenSilent(graphConfig.requestObj)
+        .then(
+            function (tokenResponse) {
+              getUserFromMSGraph(graphConfig.graphMeEndpoint, tokenResponse.accessToken, graphAPICallback);
+            }
+        )
+        .catch(
+            function (error) {
+              console.log(error);
+              if (requiresInteraction(error.errorCode)) {
+                msalApplication.acquireTokenRedirect(graphConfig.requestObj);
+              }
+            }
+        );
     }
 
     function authRedirectCallBack(error, response) {
       if (error) {
         console.log(error);
-      } else {
+      } 
+      else {
         if (response.tokenType === "access_token") {
           getUserFromMSGraph(graphConfig.graphMeEndpoint, response.accessToken, graphAPICallback);
-        } else {
+        } 
+        else {
           console.log("token type is:" + response.tokenType);
         }
       }
@@ -134,12 +158,12 @@
 
     function initPage() {
       // Browser check variables
-      var ua = window.navigator.userAgent;
-      var msie = ua.indexOf('MSIE ');
-      var msie11 = ua.indexOf('Trident/');
-      var msedge = ua.indexOf('Edge/');
-      var isIE = msie > 0 || msie11 > 0;
-      var isEdge = msedge > 0;
+      var ua      = window.navigator.userAgent;
+      var msie    = ua.indexOf('MSIE ');
+      var msie11  = ua.indexOf('Trident/');
+      var msedge  = ua.indexOf('Edge/');
+      var isIE    = msie > 0 || msie11 > 0;
+      var isEdge  = msedge > 0;
 
       // if you support IE, recommendation: sign-in using Redirect APIs vs. popup
       // Browser check variables
@@ -149,8 +173,9 @@
       // runs on page load, change config to try different login types to see what is best for your application
       switch (isIE) {
         case true:
-          document.getElementById("SignIn").onclick = function () {
-            msalApplication.loginRedirect(graphConfig.requestObj);
+          document.getElementById("SignIn").onclick = 
+          function () {
+              msalApplication.loginRedirect(graphConfig.requestObj);
           };
 
           // avoid duplicate code execution on page load in case of iframe and popup window
@@ -162,13 +187,13 @@
         case false:
           // avoid duplicate code execution on page load in case of iframe and popup window
           if (msalApplication.getAccount()) {
-            updateUserInterface();
-            acquireTokenPopupAndGetUser();
+              updateUserInterface();
+              acquireTokenPopupAndGetUser();
           }
           break;
         default:
-          console.error('Please set a valid login type');
-          break;
+            console.error('Please set a valid login type');
+            break;
       }
     }
   </script>

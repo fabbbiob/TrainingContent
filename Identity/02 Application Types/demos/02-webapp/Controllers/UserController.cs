@@ -21,11 +21,12 @@ namespace _02_webapp.Controllers
 
     public async Task<IActionResult> Index()
     {
-      var request = this._graphServiceClient.Me.Request().GetHttpRequestMessage();
+      var request   = this._graphServiceClient.Me.Request().GetHttpRequestMessage();
       request.Properties["User"] = HttpContext.User;
-      var response = await this._graphServiceClient.HttpProvider.SendAsync(request);
-      var handler = new ResponseHandler(new Serializer());
-      var user = await handler.HandleResponse<User>(response);
+      
+      var response  = await this._graphServiceClient.HttpProvider.SendAsync(request);
+      var handler   = new ResponseHandler(new Serializer());
+      var user      = await handler.HandleResponse<User>(response);
 
       return View(user);
     }

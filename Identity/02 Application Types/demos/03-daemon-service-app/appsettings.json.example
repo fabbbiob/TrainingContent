@@ -1,6 +1,6 @@
 {
-  "tenantId": "YOUR_TENANT_ID_HERE",
-  "applicationId": "YOUR_APP_ID_HERE",
-  "applicationSecret": "YOUR_APP_SECRET_HERE",
-  "targetUserId": "TARGET_USER_ID_HERE"
+  "tenantId": "da444a54-3099-4fb6-ba09-70fef98aa1de",
+  "applicationId": "587cc07b-da89-4cff-a4fe-1831e000d656",
+  "applicationSecret": "3CEt42S:aW-hxZ_P[ULN2A7nphEcH9B?",
+  "targetUserId": "fabbio.b@dancefloor.onmicrosoft.com"
 }

@@ -39,7 +39,10 @@ namespace Helpers
 
       try {
         result = await _application.AcquireTokenForClient(_scopes).ExecuteAsync();
-      } catch (MsalServiceException) { }
+      } 
+      catch (MsalServiceException) { 
+        
+      }
 
       return result.AccessToken;
     }

@@ -18,20 +18,20 @@
   <script>
     var msalConfig = {
       auth: {
-        clientId: '{{APPLICATION_ID}}',
-        authority: 'https://login.microsoftonline.com/{{DIRECTORY_ID}}',
-        redirectURI: 'http://localhost:3007'
-      },
-      cache: {
-        cacheLocation: "localStorage",
-        storeAuthStateInCookie: true
+        clientId:   'fa3f66ee-7443-4ae2-847e-ac85c4d4afe7'
+      , authority:  'https://login.microsoftonline.com/da444a54-3099-4fb6-ba09-70fef98aa1de'
+      , redirectURI:'http://localhost:3007'
+      }
+    , cache: {
+        cacheLocation: "localStorage"
+      , storeAuthStateInCookie: true
       }
     };
 
     var graphConfig = {
-      graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
-      requestObj: {
-        scopes: ["user.read", "mail.read"]
+      graphMeEndpoint: "https://graph.microsoft.com/v2.0/me"
+    , requestObj: {
+        scopes: ["user.read", "mail.read","mail.send","calendar.read"]
       }
     };
 
@@ -40,11 +40,8 @@
     // init the auth handling on the page
     initPage();
 
-
-
     msalApplication.handleRedirectCallback(authRedirectCallBack);
     // TODO: add CODE before this line
-
 
     // Update the welcome message &
     // init the signin button
@@ -65,21 +62,34 @@
     function acquireTokenPopupAndGetUserEmails() {
       // try to get token silently without logging in (ie: from token cache)
       msalApplication.acquireTokenSilent(graphConfig.requestObj)
-        .then(function (tokenResponse) {
-          // request email messages from Microsoft Graph
-          getMessagesFromMSGraph(graphConfig.graphMeEndpoint +'/messages?$top=10&$select=subject', tokenResponse.accessToken, graphAPICallback);
-        }).catch(function (error) {
-          console.log(error);
-          if (requiresInteraction(error.errorCode)) {
-            // unable to get token silently, so log the user in interactively (ie: display popup)
-            msalApplication.acquireTokenPopup(graphConfig.requestObj).then(function (tokenResponse) {
-              // request email messages from Microsoft Graph
-              getMessagesFromMSGraph(graphConfig.graphMeEndpoint +'/messages?$top=10&$select=subject', tokenResponse.accessToken, graphAPICallback);
-            }).catch(function (error) {
-              console.log(error);
-            });
+        .then(
+          function (tokenResponse) {
+            // request email messages from Microsoft Graph
+            //getMessagesFromMSGraph(graphConfig.graphMeEndpoint +'/messages?$top=10&$select=subject', tokenResponse.accessToken, graphAPICallback);
+            getEventsFromMSGraph(graphConfig.graphMeEndpoint +'/events?$top=10&$select=subject', tokenResponse.accessToken, graphAPICallback);
           }
-        });
+        )
+        .catch(
+          function (error) {
+            console.log(error);
+            if (requiresInteraction(error.errorCode)) {
+              // unable to get token silently, so log the user in interactively (ie: display popup)
+              msalApplication.acquireTokenPopup(graphConfig.requestObj)
+                .then(
+                  function (tokenResponse) {
+                    // request email messages from Microsoft Graph
+                    //getMessagesFromMSGraph(graphConfig.graphMeEndpoint +'/messages?$top=10&$select=subject', tokenResponse.accessToken, graphAPICallback);
+                    getEventsFromMSGraph(graphConfig.graphMeEndpoint +'/events?$top=10&$select=subject', tokenResponse.accessToken, graphAPICallback);
+                  }
+                )
+                .catch(
+                  function (error) {
+                    console.log(error);
+                  }
+                );
+            }
+          }
+        );
     }
 
     // If IE, use the redirect method to acquire an access token / login to Azure AD
@@ -127,7 +137,17 @@
       xmlHttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200)
           callback(JSON.parse(this.responseText));
-      }
+      };
+      xmlHttp.open("GET", endpoint, true);
+      xmlHttp.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+      xmlHttp.send();
+    }
+    function getEventsFromMSGraph(endpoint, accessToken, callback) {
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200)
+          callback(JSON.parse(this.responseText));
+      };
       xmlHttp.open("GET", endpoint, true);
       xmlHttp.setRequestHeader('Authorization', 'Bearer ' + accessToken);
       xmlHttp.send();
@@ -144,12 +164,17 @@
 
     function signIn() {
       msalApplication.loginPopup(graphConfig.requestObj)
-        .then(function (loginResponse) {
-          updateWelcomeMessageAndSigninControl();
-          acquireTokenPopupAndGetUserEmails();
-        }).catch(function (error) {
-          console.log(error);
-        });
+        .then(
+          function (loginResponse) {
+            updateWelcomeMessageAndSigninControl();
+            acquireTokenPopupAndGetUserEmails();
+          }
+        )
+        .catch(
+          function (error) {
+            console.log(error);
+          }
+        );
     }
 
     function signOut() {
@@ -160,12 +185,12 @@
 
     function initPage() {
       // Browser check variables
-      var ua = window.navigator.userAgent;
-      var msie = ua.indexOf('MSIE ');
-      var msie11 = ua.indexOf('Trident/');
-      var msedge = ua.indexOf('Edge/');
-      var isIE = msie > 0 || msie11 > 0;
-      var isEdge = msedge > 0;
+      var ua      = window.navigator.userAgent;
+      var msie    = ua.indexOf('MSIE ');
+      var msie11  = ua.indexOf('Trident/');
+      var msedge  = ua.indexOf('Edge/');
+      var isIE    = msie > 0 || msie11 > 0;
+      var isEdge  = msedge > 0;
 
       // if you support IE, recommendation: sign in using Redirect APIs vs. popup
       // Browser check variables
@@ -175,9 +200,10 @@
       // runs on page load, change config to try different login types to see what is best for your application
       switch (isIE) {
         case true:
-          document.getElementById("SignIn").onclick = function () {
-            msalApplication.loginRedirect(graphConfig.requestObj);
-          };
+          document.getElementById("SignIn").onclick = 
+            function () {
+              msalApplication.loginRedirect(graphConfig.requestObj);
+            };
 
           // avoid duplicate code execution on page load in case of iframe and popup window
           if (msalApplication.getAccount() && !msalApplication.isCallback(window.location.hash)) {
