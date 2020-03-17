@@ -29,19 +29,35 @@ namespace UserGroupRole
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddAuthentication(AzureADDefaults.AuthenticationScheme)
-          .AddAzureAD(options => Configuration.Bind("AzureAd", options));
+      services
+        .AddAuthentication(AzureADDefaults.AuthenticationScheme)
+        .AddAzureAD(options => Configuration.Bind("AzureAd", options));
 
       JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
-      services.Configure<OpenIdConnectOptions>(AzureADDefaults.OpenIdScheme, options =>
-      {
-        options.Authority = options.Authority + "/v2.0/";
-        options.TokenValidationParameters.RoleClaimType = "roles";
-        options.Events.OnTokenValidated = context => {
-          var paul = context.SecurityToken.RawData; 
-          return Task.FromResult(0);
-        };
-      });
+      
+      services.Configure<OpenIdConnectOptions>(
+        AzureADDefaults.OpenIdScheme
+      , options => {
+          options.Authority                               = options.Authority + "/v2.0/";
+          options.TokenValidationParameters.RoleClaimType = "roles";
+          options.Events.OnTokenValidated = 
+            context => {
+              var paul = context.SecurityToken.RawData; 
+              return Task.FromResult(0);
+            }
+          ;
+        }
+      );
+
+      //services
+      // .Configure<OpenIdConnectOptions>(
+      //   AzureADDefaults.OpenIdScheme
+      // , options => {
+      //     options.Authority = options.Authority + "/v2.0/";
+      //     options.TokenValidationParameters.RoleClaimType = "groups";
+      //   }
+      // );
+
 
       services.AddSingleton(SampleData.Initialize());
 

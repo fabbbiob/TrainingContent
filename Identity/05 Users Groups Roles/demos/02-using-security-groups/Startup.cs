@@ -28,24 +28,34 @@ namespace UserGroupRole
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddAuthentication(AzureADDefaults.AuthenticationScheme)
-          .AddAzureAD(options => Configuration.Bind("AzureAd", options));
+      services
+        .AddAuthentication(AzureADDefaults.AuthenticationScheme)
+        .AddAzureAD(
+          options => Configuration.Bind("AzureAd", options)
+        );
 
-      services.Configure<OpenIdConnectOptions>(AzureADDefaults.OpenIdScheme, options =>
-      {
-        options.Authority = options.Authority + "/v2.0/";
-        options.TokenValidationParameters.RoleClaimType = "groups";
-      });
+      services
+        .Configure<OpenIdConnectOptions>(
+          AzureADDefaults.OpenIdScheme
+        , options => {
+            options.Authority = options.Authority + "/v2.0/";
+            options.TokenValidationParameters.RoleClaimType = "groups";
+          }
+        );
 
       services.AddSingleton(SampleData.Initialize());
 
-      services.AddControllersWithViews(options =>
-      {
-        var policy = new AuthorizationPolicyBuilder()
-                  .RequireAuthenticatedUser()
-                  .Build();
-        options.Filters.Add(new AuthorizeFilter(policy));
-      });
+      services.AddControllersWithViews(
+        options => {
+          var policy =
+          new AuthorizationPolicyBuilder()
+            .RequireAuthenticatedUser()
+            .Build();
+          
+          options.Filters.Add(new AuthorizeFilter(policy));
+        }
+      );
+      
       services.AddRazorPages();
     }
 

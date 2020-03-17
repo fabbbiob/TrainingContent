@@ -28,19 +28,23 @@ namespace UserGroupRole
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddAuthentication(AzureADDefaults.AuthenticationScheme)
+      services
+          .AddAuthentication(AzureADDefaults.AuthenticationScheme)
           .AddAzureAD(options => Configuration.Bind("AzureAd", options));
 
-      services.Configure<OpenIdConnectOptions>(AzureADDefaults.OpenIdScheme, options =>
-      {
-        options.Authority = options.Authority + "/v2.0/";
-      });
+      services.Configure<OpenIdConnectOptions>(
+        AzureADDefaults.OpenIdScheme
+      , options => {
+          options.Authority = options.Authority + "/v2.0/";
+          options.TokenValidationParameters.RoleClaimType = "groups";
+        }
+      );
 
-      services.AddControllersWithViews(options =>
-      {
+      services.AddControllersWithViews(
+        options => {
         var policy = new AuthorizationPolicyBuilder()
-                  .RequireAuthenticatedUser()
-                  .Build();
+                      .RequireAuthenticatedUser()
+                      .Build();
         options.Filters.Add(new AuthorizeFilter(policy));
       });
       services.AddRazorPages();
@@ -49,12 +53,10 @@ namespace UserGroupRole
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-      if (env.IsDevelopment())
-      {
+      if (env.IsDevelopment()) {
         app.UseDeveloperExceptionPage();
       }
-      else
-      {
+      else {
         app.UseExceptionHandler("/Home/Error");
         // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
         app.UseHsts();
@@ -67,13 +69,15 @@ namespace UserGroupRole
       app.UseAuthentication();
       app.UseAuthorization();
 
-      app.UseEndpoints(endpoints =>
-      {
-        endpoints.MapControllerRoute(
-                  name: "default",
-                  pattern: "{controller=Home}/{action=Index}/{id?}");
-        endpoints.MapRazorPages();
-      });
+      app.UseEndpoints(
+        endpoints => {
+          endpoints.MapControllerRoute(
+            name:     "default"
+          , pattern:  "{controller=Home}/{action=Index}/{id?}"
+          );
+          endpoints.MapRazorPages();
+        }
+      );
     }
   }
 }

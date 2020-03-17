@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace UserGroupRole.Controllers
 {
-  [Authorize(Roles =("36079258-b391-4254-add1-be98e1ecc225"))]
+  [Authorize(Roles =("9873ee98-213c-4ecb-a5fa-2011270b71ef"))]
   public class ProductsController : Controller
   {
     SampleData data;
