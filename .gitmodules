@@ -1,0 +1,3 @@
+[submodule "Graph/msgraph-training-optimize-data-usage"]
+	path = Graph/msgraph-training-optimize-data-usage
+	url = https://github.com/fabbbiob/msgraph-training-optimize-data-usage.git
