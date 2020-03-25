@@ -1,3 +1,12 @@
 [submodule "Graph/msgraph-training-optimize-data-usage"]
 	path = Graph/msgraph-training-optimize-data-usage
 	url = https://github.com/fabbbiob/msgraph-training-optimize-data-usage.git
+[submodule "Graph/msgraph-training-optimize-network-traffic"]
+	path = Graph/msgraph-training-optimize-network-traffic
+	url = https://github.com/microsoftgraph/msgraph-training-optimize-network-traffic.git
+[submodule "Graph/msgraph-access-user-data"]
+	path = Graph/msgraph-access-user-data
+	url = https://github.com/microsoftgraph/msgraph-access-user-data.git
+[submodule "Graph/msgraph-access-group-data"]
+	path = Graph/msgraph-access-group-data
+	url = https://github.com/microsoftgraph/msgraph-access-group-data.git
