@@ -10,3 +10,6 @@
 [submodule "Graph/msgraph-access-group-data"]
 	path = Graph/msgraph-access-group-data
 	url = https://github.com/microsoftgraph/msgraph-access-group-data.git
+[submodule "Graph/msgraph-access-files-data"]
+	path = Graph/msgraph-access-files-data
+	url = https://github.com/microsoftgraph/msgraph-access-files-data.git
