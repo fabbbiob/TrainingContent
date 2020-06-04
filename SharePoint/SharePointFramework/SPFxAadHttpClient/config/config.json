@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "sp-fx-aad-http-client-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/spFxAadHttpClient/SpFxAadHttpClientWebPart.js",
+          "manifest": "./src/webparts/spFxAadHttpClient/SpFxAadHttpClientWebPart.manifest.json"
+        }
+      ]
+    },
+    "second-deployment-demo-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/secondDeploymentDemo/SecondDeploymentDemoWebPart.js",
+          "manifest": "./src/webparts/secondDeploymentDemo/SecondDeploymentDemoWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "SpFxAadHttpClientWebPartStrings": "lib/webparts/spFxAadHttpClient/loc/{locale}.js",
+    "SecondDeploymentDemoWebPartStrings": "lib/webparts/secondDeploymentDemo/loc/{locale}.js"
+  }
+}

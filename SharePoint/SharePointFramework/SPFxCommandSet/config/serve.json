@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://brioches.sharepoint.com/Lists/Work%20Status/AllItems.aspx",
+      "customActions": {
+        "6c62de76-dcc3-4013-80d9-53129c37fc16": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "messagePrefix": "[command_set_prefix]"
+          }
+        }
+      }
+    },
+    "commandSetDemo": {
+      "pageUrl": "https://brioches.sharepoint.com/Lists/Work%20Status/AllItems.aspx",
+      "customActions": {
+        "6c62de76-dcc3-4013-80d9-53129c37fc16": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    }
+  }
+}

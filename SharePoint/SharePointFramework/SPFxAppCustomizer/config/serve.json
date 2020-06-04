@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://brioches.sharepoint.com/SitePages/CUSTOMIZER-DANCEFLOOR.aspx",
+      "customActions": {
+        "bacd621e-3858-4121-8873-ac046fc80c60": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "header": "Header area of the page",
+            "footer": "Footer area of the page"
+          }
+        }
+      }
+    },
+    "helloAppCustomizer": {
+      "pageUrl": "https://brioches.sharepoint.com/SitePages/CUSTOMIZER-DANCEFLOOR.aspx",
+      "customActions": {
+        "bacd621e-3858-4121-8873-ac046fc80c60": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "header": "Header area of the page",
+            "footer": "Footer area of the page"
+          }
+        }
+      }
+    }
+  }
+}

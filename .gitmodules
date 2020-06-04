@@ -13,3 +13,9 @@
 [submodule "Graph/msgraph-access-files-data"]
 	path = Graph/msgraph-access-files-data
 	url = https://github.com/microsoftgraph/msgraph-access-files-data.git
+[submodule "Sharepoint/sp-dev-training-spfx-web-parts"]
+	path = Sharepoint/sp-dev-training-spfx-web-parts
+	url = https://github.com/SharePoint/sp-dev-training-spfx-web-parts.git
+[submodule "SharePoint/sp-dev-training-spfx-webpart-proppane"]
+	path = SharePoint/sp-dev-training-spfx-webpart-proppane
+	url = https://github.com/SharePoint/sp-dev-training-spfx-webpart-proppane.git

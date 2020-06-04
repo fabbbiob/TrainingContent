@@ -1,0 +1,15 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "whichFolder": "subdir"
+  },
+  "generator-teams": {
+    "promptValues": {
+      "developer": "Brioches",
+      "unitTestsEnabled": false,
+      "useAzureAppInsights": false
+    },
+    "libraryName": "messagingExt"
+  }
+}

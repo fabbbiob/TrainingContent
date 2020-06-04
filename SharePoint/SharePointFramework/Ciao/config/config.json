@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "ciao-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/ciao/CiaoWebPart.js",
+          "manifest": "./src/webparts/ciao/CiaoWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CiaoWebPartStrings": "lib/webparts/ciao/loc/{locale}.js"
+  }
+}
